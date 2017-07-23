@@ -1,0 +1,9 @@
+
+# Dependency directories
+node_modules/
+
+:# Optional npm cache directory
+.npm 
+
+#ignore the package lock
+ package-lock.json

@@ -1,0 +1,16 @@
+{
+  "name": "schedulator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.1.0",
+    "express": "^4.15.3",
+    "mocha": "^3.4.2"
+  }
+}
