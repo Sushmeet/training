@@ -11,12 +11,14 @@ function PromisifiedRequest(url) {
 
 async function asyncRequest(url) {
     var data = await PromisifiedRequest(someApi);
-    console.log (data);
+    //console.log (data);
     //return data;
 }
 
  // var results = asyncRequest(someApi);
 
-var results =  await asyncRequest(someApi);
+var results =   asyncRequest(someApi).then(function(data){
+    console.log(data[0]);
+})
 
-//console.log(results)
+// console.log(results)
