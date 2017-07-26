@@ -1,5 +1,14 @@
 <h1>Results page</h1>
+<ul>
+    <% data.Search.forEach(function(movie,index) { %>
+        <li>
+             <%= index %> - <%= movie.Title %> - <%= movie.Year %> 
+        </li>
+    <% }); %>
+</ul>
 
-<% data.Search.forEach(function(movie,index) { %>
- <li>My favourtie movie is <%= movie.Title %> at index <%= index %></li>
-<% }); %>
+<a href="/">Search Again</a>
+
+<form action="/" method="GET">
+<input type="submit" value="Back to home Page">
+</form>

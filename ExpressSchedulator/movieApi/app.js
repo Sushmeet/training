@@ -5,13 +5,22 @@ var app = express();
 
 app.set('view engine', 'ejs');
 
+app.get('/', function(req, res){
+    res.render('home');
+});
 
 app.get('/results', function(req, res) {
-    var apiurl = 'http://www.omdbapi.com/?s=star&apikey=thewdb';
-    request.get(apiurl, function(error, response, body){
-        var movie = JSON.parse(body);
-       // res.send(movie.Search[0].Title);
-       res.render('results', {data: movie});
+    var movieName = req.query.search;
+    var apiUrl = 'http://www.omdbapi.com/?s=' + movieName +'&apikey=thewdb';
+    request.get(apiUrl, function(error, response, body){
+        if(!error && response.statusCode === 200) {
+            var movie = JSON.parse(body);
+            // res.send(movie.Search[0].Title);
+            res.render('results', {data: movie});
+        }
+        else{
+            console.log(error);
+        }
     });
 });
 

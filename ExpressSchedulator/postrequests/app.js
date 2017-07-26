@@ -8,7 +8,6 @@ app.set('view engine', 'ejs');
 
 var friends = ['tony', 'moly', 'johnyy', 'bobo'];
 
-
 app.get('/', function(req, res) {
     res.render('Home');
 });
