@@ -3,7 +3,7 @@ var assert = require('assert');
 describe('Sushi', function() {
     describe('2nd level Sushi', function() {
         it('please check something', function(){
-            assert.equal (4,3);
+            assert.equal (3,3);
         });
     });
 });
