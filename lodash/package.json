@@ -1,0 +1,17 @@
+{
+  "name": "lodashy",
+  "version": "1.0.0",
+  "description": "check out and try the lodash library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "lodash"
+  ],
+  "author": "sushmeet sunger",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
+}
