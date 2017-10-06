@@ -9,7 +9,10 @@
   "author": "sushmeet sunger",
   "license": "ISC",
   "devDependencies": {
+    "after": "^0.8.2",
+    "chai": "^4.1.2",
     "mocha": "^3.5.0",
+    "sinon": "^3.2.1",
     "supertest": "^3.0.0"
   },
   "dependencies": {

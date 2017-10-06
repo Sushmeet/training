@@ -1,0 +1,15 @@
+{
+  "name": "unitesting",
+  "version": "1.0.0",
+  "description": "unittestig",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sushmeet",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^21.0.1"
+  }
+}

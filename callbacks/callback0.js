@@ -1,10 +1,14 @@
-function john() {
-    console.log('I am john');
-};
+module.exports = {
+    john: function() {
+        return 'john';
+    },
+    calljohn: function (callback) {
+       return callback();
+    }
+}
 
-function calljohn (callback) {
-    callback();
-};
 
-calljohn(john);  // passing a higher order function for me. no big deal here.
+
+
+//calljohn(john);  // passing a higher order function for me. no big deal here.
 

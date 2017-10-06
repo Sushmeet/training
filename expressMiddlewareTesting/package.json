@@ -1,0 +1,20 @@
+{
+  "name": "expressunittesting",
+  "version": "1.0.0",
+  "description": "express middle ware unit testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.4"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^3.5.0",
+    "node-mocks-http": "^1.6.4",
+    "sinon": "^3.2.1"
+  }
+}
