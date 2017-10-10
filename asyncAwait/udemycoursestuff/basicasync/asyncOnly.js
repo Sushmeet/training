@@ -1,9 +1,8 @@
 // async function
-const getName = async () => {
-    // this is equivalent to reject.
- // throw new Error('error from getName asynch function');
-  return 'Sushi';
-};
+const getName = async () =>
+  // this is equivalent to reject.
+  // throw new Error('error from getName asynch function');
+  'Sushi';
 
 // promise function
 const getName2 = () =>
