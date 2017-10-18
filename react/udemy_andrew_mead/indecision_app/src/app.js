@@ -4,22 +4,26 @@ console.log("App.js is running!");
 // live-server public
 
 // JSX - JavaScript XML.
+let userName = 'Andrew';
+let userAge = 26;
+let userLocation = 'Chicago'
+
+let user = {
+  name: 'John',
+  age: 26,
+  location: 'Chicago',
+}
+
 let template = (
   <div>
-    <h1>Indecision App</h1>
+    <h1>{user.name.toUpperCase() + '!'}</h1>
     <p>paragraph from app.js</p>
     <ol>
-        <li>Item one</li>
-        <li>Item two</li>
+        <li>User age is  {user.age}</li>
+        <li>{user.location}</li>
     </ol>
   </div>
 );
-
-// Create a templateTwo car JSX impression
-// div
-// h1 -> Andrew Mead
-// p -> location
-// render templateTwo instead of template.
 
 let appRoot = document.getElementById("app");
 

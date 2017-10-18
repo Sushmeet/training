@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 console.log("App.js is running!");
 
@@ -6,40 +6,45 @@ console.log("App.js is running!");
 // live-server public
 
 // JSX - JavaScript XML.
+var userName = 'Andrew';
+var userAge = 26;
+var userLocation = 'Chicago';
+
+var user = {
+  name: 'John',
+  age: 26,
+  location: 'Chicago'
+};
+
 var template = React.createElement(
-  "div",
+  'div',
   null,
   React.createElement(
-    "h1",
+    'h1',
     null,
-    "Indecision App"
+    user.name.toUpperCase() + '!'
   ),
   React.createElement(
-    "p",
+    'p',
     null,
-    "paragraph from app.js"
+    'paragraph from app.js'
   ),
   React.createElement(
-    "ol",
+    'ol',
     null,
     React.createElement(
-      "li",
+      'li',
       null,
-      "Item one"
+      'User age is  ',
+      user.age
     ),
     React.createElement(
-      "li",
+      'li',
       null,
-      "Item two"
+      user.location
     )
   )
 );
-
-// Create a templateTwo car JSX impression
-// div
-// h1 -> Andrew Mead
-// p -> location
-// render templateTwo instead of template.
 
 var appRoot = document.getElementById("app");
 
