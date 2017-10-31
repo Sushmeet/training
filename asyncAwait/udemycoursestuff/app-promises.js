@@ -64,7 +64,7 @@ const getStatus = (userId) => {
 };
 
 // using async await and doing the same.
-const asyncGetStatus = async(userId) => {
+const asyncGetStatus = async (userId) => {
   const userValue = await getUsers(userId);
   const grades = await getGrades(userValue.schoolId);
   let average = 0;
@@ -80,7 +80,6 @@ getStatus(2).then((status) => {
 }).catch((e) => {
   console.log(e);
 });
-
 
 asyncGetStatus(2).then((status) => {
   console.log(status);
