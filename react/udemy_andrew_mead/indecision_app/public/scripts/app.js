@@ -2,9 +2,6 @@
 
 console.log("App.js is running!");
 
-// babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
-// live-server public
-
 // Create app object title/subtitle 
 var app = {
     title: 'Indecision App',
