@@ -3,10 +3,23 @@ console.log("App.js is running!");
 // babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
 // live-server public
 
-// JSX - JavaScript XML.
-let userName = 'Andrew';
-let userAge = 26;
-let userLocation = 'Chicago'
+// Create app object title/subtitle 
+let app = {
+    title: 'Indecision App',
+    subtitle: 'english subtitle'
+}
+
+// JSX - Javascript XML
+let template2 = (
+<div>
+    <h1>{app.title}</h1>
+    <p>This is some paragraph's. {app.subtitle}</p>
+    <ol>
+        <li>Item One</li>
+        <li>Item Two</li>
+    </ol>
+</div>
+);
 
 let user = {
   name: 'John',
@@ -17,7 +30,7 @@ let user = {
 let template = (
   <div>
     <h1>{user.name.toUpperCase() + '!'}</h1>
-    <p>paragraph from app.js</p>
+    <p>paragraph from app.js file</p>
     <ol>
         <li>User age is  {user.age}</li>
         <li>{user.location}</li>
@@ -27,4 +40,4 @@ let template = (
 
 let appRoot = document.getElementById("app");
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(template2, appRoot);

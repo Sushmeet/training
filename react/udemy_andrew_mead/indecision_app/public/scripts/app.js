@@ -5,47 +5,78 @@ console.log("App.js is running!");
 // babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
 // live-server public
 
-// JSX - JavaScript XML.
-var userName = 'Andrew';
-var userAge = 26;
-var userLocation = 'Chicago';
+// Create app object title/subtitle 
+var app = {
+    title: 'Indecision App',
+    subtitle: 'english subtitle'
+
+    // JSX - Javascript XML
+};var template2 = React.createElement(
+    'div',
+    null,
+    React.createElement(
+        'h1',
+        null,
+        app.title
+    ),
+    React.createElement(
+        'p',
+        null,
+        'This is some paragraph\'s. ',
+        app.subtitle
+    ),
+    React.createElement(
+        'ol',
+        null,
+        React.createElement(
+            'li',
+            null,
+            'Item One'
+        ),
+        React.createElement(
+            'li',
+            null,
+            'Item Two'
+        )
+    )
+);
 
 var user = {
-  name: 'John',
-  age: 26,
-  location: 'Chicago'
+    name: 'John',
+    age: 26,
+    location: 'Chicago'
 };
 
 var template = React.createElement(
-  'div',
-  null,
-  React.createElement(
-    'h1',
-    null,
-    user.name.toUpperCase() + '!'
-  ),
-  React.createElement(
-    'p',
-    null,
-    'paragraph from app.js'
-  ),
-  React.createElement(
-    'ol',
+    'div',
     null,
     React.createElement(
-      'li',
-      null,
-      'User age is  ',
-      user.age
+        'h1',
+        null,
+        user.name.toUpperCase() + '!'
     ),
     React.createElement(
-      'li',
-      null,
-      user.location
+        'p',
+        null,
+        'paragraph from app.js file'
+    ),
+    React.createElement(
+        'ol',
+        null,
+        React.createElement(
+            'li',
+            null,
+            'User age is  ',
+            user.age
+        ),
+        React.createElement(
+            'li',
+            null,
+            user.location
+        )
     )
-  )
 );
 
 var appRoot = document.getElementById("app");
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(template2, appRoot);
