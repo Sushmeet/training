@@ -5,7 +5,11 @@ console.log("App.js is running!");
 // Create app object title/subtitle 
 var app = {
     title: 'Indecision App',
-    subtitle: 'english subtitle'
+    subtitle: 'english subtitle',
+    options: ['One', 'Two']
+
+    // only render the subtitle (and p tag) if subtitle exists
+    // render new p tag - if optionas .length > 0 'your options' 'No Options'
 
     // JSX - Javascript XML
 };var template2 = React.createElement(
@@ -16,11 +20,21 @@ var app = {
         null,
         app.title
     ),
-    React.createElement(
+    app.subtitle && React.createElement(
         'p',
         null,
-        'This is some paragraph\'s. ',
-        app.subtitle
+        'Subtitle: ',
+        app.subtitle,
+        ' '
+    ),
+    app.options && app.options.length > 0 ? React.createElement(
+        'p',
+        null,
+        'Your options'
+    ) : React.createElement(
+        'p',
+        null,
+        'No Options'
     ),
     React.createElement(
         'ol',
@@ -44,6 +58,15 @@ var user = {
     location: 'Chicago'
 };
 
+var getLocation = function getLocation(location) {
+    return location ? React.createElement(
+        'li',
+        null,
+        'location: ',
+        location
+    ) : undefined;
+};
+
 var template = React.createElement(
     'div',
     null,
@@ -60,17 +83,14 @@ var template = React.createElement(
     React.createElement(
         'ol',
         null,
-        React.createElement(
+        user.age && user.age >= 18 && React.createElement(
             'li',
             null,
-            'User age is  ',
-            user.age
+            'Age: ',
+            user.age,
+            ' '
         ),
-        React.createElement(
-            'li',
-            null,
-            user.location
-        )
+        getLocation(user.location)
     )
 );
 
