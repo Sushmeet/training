@@ -1,20 +1,99 @@
 'use strict';
 
-console.log('arrow functions');
+console.log("App.js is running!");
 
-var squareOld = function squareOld(num) {
-    return num * num;
+// Create app object title/subtitle 
+var app = {
+    title: 'Indecision App',
+    subtitle: 'english subtitle',
+    options: ['One', 'Two']
+
+    // only render the subtitle (and p tag) if subtitle exists
+    // render new p tag - if optionas .length > 0 'your options' 'No Options'
+
+    // JSX - Javascript XML
+};var template2 = React.createElement(
+    'div',
+    null,
+    React.createElement(
+        'h1',
+        null,
+        app.title
+    ),
+    app.subtitle && React.createElement(
+        'p',
+        null,
+        'Subtitle: ',
+        app.subtitle,
+        ' '
+    ),
+    app.options && app.options.length > 0 ? React.createElement(
+        'p',
+        null,
+        'Your options'
+    ) : React.createElement(
+        'p',
+        null,
+        'No Options'
+    ),
+    React.createElement(
+        'ol',
+        null,
+        React.createElement(
+            'li',
+            null,
+            'Item One'
+        ),
+        React.createElement(
+            'li',
+            null,
+            'Item Two'
+        )
+    )
+);
+
+var user = {
+    name: 'John',
+    age: 26,
+    location: 'Chicago'
 };
 
-var square = function square(num) {
-    return num * num;
+var getLocation = function getLocation(location) {
+    return location ? React.createElement(
+        'li',
+        null,
+        'location: ',
+        location
+    ) : undefined;
 };
 
-var resultOLD = squareOld(9);
-var result = square(9);
-console.log(result);
-console.log(resultOLD);
+var template = React.createElement(
+    'div',
+    null,
+    React.createElement(
+        'h1',
+        null,
+        user.name.toUpperCase() + '!'
+    ),
+    React.createElement(
+        'p',
+        null,
+        'paragraph from app.js file'
+    ),
+    React.createElement(
+        'ol',
+        null,
+        user.age && user.age >= 18 && React.createElement(
+            'li',
+            null,
+            'Age: ',
+            user.age,
+            ' '
+        ),
+        getLocation(user.location)
+    )
+);
 
-// Challenge 
+var appRoot = document.getElementById("app");
 
-var getFirstName = function getFirstName(name) {};
+ReactDOM.render(template2, appRoot);
