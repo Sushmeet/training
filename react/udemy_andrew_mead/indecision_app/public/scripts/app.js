@@ -1,99 +1,58 @@
-'use strict';
+"use strict";
 
 console.log("App.js is running!");
+//Architecture
+// Declared 3 functions
+// Declared 3 buttons
+// Just render it.
 
-// Create app object title/subtitle 
-var app = {
-    title: 'Indecision App',
-    subtitle: 'english subtitle',
-    options: ['One', 'Two']
-
-    // only render the subtitle (and p tag) if subtitle exists
-    // render new p tag - if optionas .length > 0 'your options' 'No Options'
-
-    // JSX - Javascript XML
-};var template2 = React.createElement(
-    'div',
-    null,
-    React.createElement(
-        'h1',
-        null,
-        app.title
-    ),
-    app.subtitle && React.createElement(
-        'p',
-        null,
-        'Subtitle: ',
-        app.subtitle,
-        ' '
-    ),
-    app.options && app.options.length > 0 ? React.createElement(
-        'p',
-        null,
-        'Your options'
-    ) : React.createElement(
-        'p',
-        null,
-        'No Options'
-    ),
-    React.createElement(
-        'ol',
-        null,
-        React.createElement(
-            'li',
-            null,
-            'Item One'
-        ),
-        React.createElement(
-            'li',
-            null,
-            'Item Two'
-        )
-    )
-);
-
-var user = {
-    name: 'John',
-    age: 26,
-    location: 'Chicago'
-};
-
-var getLocation = function getLocation(location) {
-    return location ? React.createElement(
-        'li',
-        null,
-        'location: ',
-        location
-    ) : undefined;
-};
-
-var template = React.createElement(
-    'div',
-    null,
-    React.createElement(
-        'h1',
-        null,
-        user.name.toUpperCase() + '!'
-    ),
-    React.createElement(
-        'p',
-        null,
-        'paragraph from app.js file'
-    ),
-    React.createElement(
-        'ol',
-        null,
-        user.age && user.age >= 18 && React.createElement(
-            'li',
-            null,
-            'Age: ',
-            user.age,
-            ' '
-        ),
-        getLocation(user.location)
-    )
-);
-
+var count = 0;
 var appRoot = document.getElementById("app");
 
-ReactDOM.render(template2, appRoot);
+var addOne = function addOne() {
+  console.log('addone');
+  count++;
+  callbambi();
+};
+var minusOne = function minusOne() {
+  console.log('minus one');
+  count--;
+  callbambi();
+};
+var reset = function reset() {
+  console.log('reset');
+  count = 0;
+  callbambi();
+};
+
+var callbambi = function callbambi() {
+  var template2 = React.createElement(
+    "div",
+    null,
+    React.createElement(
+      "h1",
+      null,
+      "Count: ",
+      count
+    ),
+    React.createElement(
+      "button",
+      { onClick: addOne },
+      "Button"
+    ),
+    React.createElement(
+      "button",
+      { onClick: minusOne },
+      "-1"
+    ),
+    React.createElement(
+      "button",
+      { onClick: reset },
+      "reset"
+    )
+  );
+
+  ReactDOM.render(template2, appRoot);
+};
+
+callbambi();
