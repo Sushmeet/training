@@ -53,6 +53,11 @@ console.log(hp);
 console.log(defense);
 // => 100”
 
-const calculateDamage = ({attack}, {hp, defense}) => {
-    const effectiveAttacking = attack - defense
-}
+console.log({ hp, defense });
+console.log({defense});
+
+
+
+// const calculateDamage = ({attack}, {hp, defense}) => {
+//     const effectiveAttacking = attack - defense + getHpModifier(hp);
+// }
