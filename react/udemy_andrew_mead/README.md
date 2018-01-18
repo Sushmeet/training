@@ -1,4 +1,5 @@
 # To run the server From the indecision folder
+``` npm install -g live-server ```
 ``` live-server public ```
 # To run the app.js file which generates the react app.js file
 /Users/ssunger/Documents/training/react/udemy_andrew_mead/indecision_app
