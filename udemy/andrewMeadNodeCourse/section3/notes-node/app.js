@@ -25,9 +25,12 @@ let user = os.userInfo();
   shell: '/bin/bash' }
 */
 
-// append items to a file
-fs.appendFile("greetings.txt", ` Hello ${user.username}!`, err => {
+// //append items to a file
+fs.appendFile("greetings.txt", ` Hello ${user.username}! and ${notes.age}`, err => {
   if (err) throw err;
 });
 
+console.log(notes.addNote());
+
+console.log(notes.add(9, -2));
 
