@@ -14,6 +14,7 @@ console.log('starting app.js');
 const fs = require("fs");
 const os = require("os");
 const notes = require("./notes");
+const _ = require('lodash');
 
 let user = os.userInfo();
 // console.log(user); // user object if u want to see
@@ -26,11 +27,17 @@ let user = os.userInfo();
 */
 
 // //append items to a file
-fs.appendFile("greetings.txt", ` Hello ${user.username}! and ${notes.age}`, err => {
-  if (err) throw err;
-});
+// fs.appendFile("greetings.txt", ` Hello ${user.username}! and ${notes.age}`, err => {
+//   if (err) throw err;
+// });
 
-console.log(notes.addNote());
+// console.log(notes.addNote());
 
-console.log(notes.add(9, -2));
+// console.log(notes.add(9, -2));
 
+
+
+// use of lodash 
+
+console.log(_.isString(true)); // output false
+console.log(_.isString('sushi')); // output true
