@@ -1,0 +1,37 @@
+/*
+To run this program with in the command line terminal pass the arguments title and body
+node app-yargs.js add --title="secrets from andrew" --body="sushi body"
+*/
+
+console.log("Starting app.js\n");
+
+const fs = require("fs");
+const _ = require("lodash");
+const yargs = require('yargs');
+
+const notes = require("./notes");
+
+const argv = yargs.argv;
+
+
+if (process.argv[2]) {
+    const command = argv._[0].toLowerCase();
+    console.log("Command: ", command, '\n');
+    // console.log('Process.argv', process.argv);
+    console.log('Yags.argv\n', argv);
+
+    if (command === "add") {
+        notes.addNote(argv.title, argv.body);
+    } else if (command === "list") {
+        console.log("Listing all notes \n");
+        notes.getAll();
+    } else if (command === "read") {
+        console.log("Reading all notes \n");
+        notes.getNote(argv.title);
+    } else if (command === "remove") {
+        console.log("Removing Note \n");
+        notes.removeNote(argv.title);
+    } else {
+        console.log("command not found");
+    }
+}
