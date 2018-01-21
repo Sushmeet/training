@@ -41,3 +41,6 @@ let user = os.userInfo();
 
 console.log(_.isString(true)); // output false
 console.log(_.isString('sushi')); // output true
+
+const arr = [1,2,3,1,'andre', 'andre', 'sushi'];
+console.log(_.uniq(arr));
