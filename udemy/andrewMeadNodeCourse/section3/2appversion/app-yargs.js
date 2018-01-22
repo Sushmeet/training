@@ -3,22 +3,22 @@ To run this program with in the command line terminal pass the arguments title a
 node app-yargs.js add --title="secrets from andrew" --body="sushi body"
 */
 
-console.log("Starting app.js\n");
+console.log("Starting app.js");
 
 const fs = require("fs");
 const _ = require("lodash");
-const yargs = require('yargs');
+const argv = require('yargs').argv;
 
 const notes = require("./notes");
 
-const argv = yargs.argv;
+//const argv = yargs.argv;
 
 
 if (process.argv[2]) {
     const command = argv._[0].toLowerCase();
-    console.log("Command: ", command, '\n');
+    // console.log("Command: ", command, '\n');
     // console.log('Process.argv', process.argv);
-    console.log('Yags.argv\n', argv);
+    // console.log('Yags.argv\n', argv);
 
     if (command === "add") {
         notes.addNote(argv.title, argv.body);
