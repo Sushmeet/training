@@ -5,17 +5,18 @@ const filePath = path.join(__dirname, '/tmp/hello')
 const newFilePath = path.join(__dirname, '/tmp/john')
 
 
-fs.rename(filePath, newFilePath, (err) => {
-    if (err) throw err;
-    console.log('successful rename');
-    fs.stat(newFilePath, (err, stats) => {
-        if (err) throw err;
-        console.log(`stats: ${JSON.stringify(stats)}`);
-    });
-});
+// // rename a file path.
+// fs.rename(filePath, newFilePath, (err) => {
+//     if (err) throw err;
+//     console.log('successful rename');
+//     fs.stat(newFilePath, (err, stats) => {
+//         if (err) throw err;
+//         console.log(`stats: ${JSON.stringify(stats)}`);
+//     });
+// });
 
-
-// fs.unlink(filePath, (err) => {
+// delete a filepath.
+// fs.unlink(newFilePath, (err) => {
 //     if (err) throw err;
 //     console.log('err', err);
 //     console.log('sucessfully deleted /tmp/hello');
