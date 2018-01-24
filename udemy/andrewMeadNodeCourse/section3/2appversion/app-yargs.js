@@ -35,7 +35,6 @@ if (process.argv[2]) {
         console.log("Reading all notes \n");
         notes.getNote(argv.title);
     } else if (command === "remove") {
-        console.log("Removing Note \n");
         notes.removeNote(argv.title);
     } else {
         console.log("command not found");
