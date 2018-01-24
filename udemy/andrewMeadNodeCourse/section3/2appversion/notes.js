@@ -26,6 +26,7 @@ const addNote = (title, body) => {
     if (title && body && duplicateNotes.length === 0) {
         notes.push(note);
         saveNotes(notes);
+        return note;
     }
 }
 

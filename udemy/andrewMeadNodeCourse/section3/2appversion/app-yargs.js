@@ -21,7 +21,13 @@ if (process.argv[2]) {
     // console.log('Yags.argv\n', argv);
 
     if (command === "add") {
-        notes.addNote(argv.title, argv.body);
+        let note = notes.addNote(argv.title, argv.body);
+        if(note) {
+            console.log(`title is ${note.title} and body is ${note.body}`)
+        }
+        else {
+            console.log("duplicate note")
+        }
     } else if (command === "list") {
         console.log("Listing all notes \n");
         notes.getAll();
