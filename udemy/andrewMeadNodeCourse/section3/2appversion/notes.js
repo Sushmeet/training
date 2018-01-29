@@ -46,7 +46,7 @@ const getNote = (title) => {
 
 const removeNote = (title) => {
     let notes = fetchNotes();
-    let removedNoteArr = notes.filter((note) => note.title !== title)
+    let removedNoteArr = notes.filter((note) => note.title !== title) // this only makes an array of values which evaluate to TRUE
 
     saveNotes(removedNoteArr);
 }
