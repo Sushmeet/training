@@ -1,6 +1,9 @@
 /*
 To run this program with in the command line terminal pass the arguments title and body
 node app-yargs.js add --title="secrets from andrew" --body="sushi body"
+
+for debugging
+nodemon --inspect-brk app-yargs.js read --title="secrets"
 */
 
 console.log("Starting app.js");
