@@ -10,6 +10,7 @@ const _ = require("lodash");
 const argv = require("yargs").argv;
 
 const notes = require("./notes");
+const {logNote} = require('./notes');
 
 //const argv = yargs.argv;
 
@@ -23,7 +24,9 @@ if (process.argv[2]) {
     let note = notes.addNote(argv.title, argv.body);
     if (note) {
       console.log("NoteAdded");
-      console.log(`title is ${note.title} and body is ${note.body}`);
+      // console.log(`title is ${note.title} and body is ${note.body}`);
+      // notes.logNote(note);
+      logNote(note);
     } else {
       console.log("duplicate note");
     }
@@ -32,9 +35,15 @@ if (process.argv[2]) {
 
     notes.getAll();
   } else if (command === "read") {
-    console.log("Reading all notes \n");
+    let noteReturned = notes.getNote(argv.title);
 
-    notes.getNote(argv.title);
+    if (noteReturned) {
+      notes.logNote(noteReturned);
+    }
+    else {
+      console.log('Note not found');
+    }
+
   } else if (command === "remove") {
     let noteRemoved = notes.removeNote(argv.title);
     let message = noteRemoved ? "Note was removed" : "Note not found";
