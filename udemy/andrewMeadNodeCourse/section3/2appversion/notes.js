@@ -16,12 +16,12 @@ const saveNotes = (notes) => {
 }
 
 const addNote = (title, body) => {
-    let notes = fetchNotes();
+    let notes = fetchNotes(); // get all the existing notes.
     const note = {
         title,
         body
     }
-    const duplicateNotes = notes.filter((note) => note.title === title);
+    const duplicateNotes = notes.filter((note) => note.title === title); 
 
     if (title && body && duplicateNotes.length === 0) {
         notes.push(note);
@@ -31,24 +31,23 @@ const addNote = (title, body) => {
 }
 
 const getAll = () => {
-    console.log('Getting all notes \n');
-    const notesString = fs.readFileSync('Notes.json');
+    const notesString = fs.readFileSync('notes-data.json');
     const note = JSON.parse(notesString);
-    let arr = [];
-    arr = note;
-    console.log(arr[0]);
+    console.log(note);
 }
 
 const getNote = (title) => {
+    //TODO: complete this function.
     console.log(`Reading note with ${title} \n`);
-
 }
 
 const removeNote = (title) => {
-    let notes = fetchNotes();
-    let removedNoteArr = notes.filter((note) => note.title !== title) // this only makes an array of values which evaluate to TRUE
-
-    saveNotes(removedNoteArr);
+    //TODO: we dont check if note exists in the file before deleting.
+        console.log(`Deleting note with title ${title}`);
+        let notes = fetchNotes();
+        let removedNoteArr = notes.filter((note) => note.title !== title) // this only makes an array of values which evaluate to TRUE
+    
+        saveNotes(removedNoteArr);
 }
 
 module.exports = {

@@ -23,13 +23,14 @@ if (process.argv[2]) {
     if (command === "add") {
         let note = notes.addNote(argv.title, argv.body);
         if(note) {
+            console.log('NoteAdded')
             console.log(`title is ${note.title} and body is ${note.body}`)
         }
         else {
             console.log("duplicate note")
         }
     } else if (command === "list") {
-        console.log("Listing all notes \n");
+        console.log("Listing all notes");
         notes.getAll();
     } else if (command === "read") {
         console.log("Reading all notes \n");
