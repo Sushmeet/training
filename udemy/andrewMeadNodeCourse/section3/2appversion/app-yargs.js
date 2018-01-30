@@ -7,14 +7,41 @@ nodemon --inspect-brk app-yargs.js read --title="secrets"
 */
 const fs = require("fs");
 const _ = require("lodash");
-const argv = require("yargs").argv;
+const yargs = require("yargs");
+//const argv = require("yargs").argv;
 
 const notes = require("./notes");
 const {logNote} = require('./notes');
 
-//const argv = yargs.argv;
+const titleOptions = {
+  describe: 'Title of note',
+  demand: true,
+  alias: 't'
+};
 
-if (process.argv[2]) {
+const bodyOptions = {
+    describe: "body of title",
+    demand: true,
+    alias: 'b',
+  };
+
+//const argv = yargs.argv;
+const argv = yargs
+  .command('add', 'Add a new note', {
+    title: titleOptions,
+    body: bodyOptions,
+  })
+  .command('list', 'List all notes')
+  .command('read', 'Read a note', {
+    title: titleOptions,
+  })
+  .command('remove', 'Remove all notes', {
+    title: titleOptions,
+  })
+  .help()
+  .argv;
+
+// if (process.argv[2]) {
   const command = argv._[0].toLowerCase();
   // console.log("Command: ", command, '\n');
   // console.log('Process.argv', process.argv);
@@ -56,4 +83,4 @@ if (process.argv[2]) {
   } else {
     console.log("command not found");
   }
-}
+// }
