@@ -42,12 +42,13 @@ const getNote = (title) => {
 }
 
 const removeNote = (title) => {
-    //TODO: we dont check if note exists in the file before deleting.
         console.log(`Deleting note with title ${title}`);
         let notes = fetchNotes();
-        let removedNoteArr = notes.filter((note) => note.title !== title) // this only makes an array of values which evaluate to TRUE
+        let filteredNotes = notes.filter((note) => note.title !== title) // this only makes an array of values which evaluate to TRUE
     
-        saveNotes(removedNoteArr);
+        saveNotes(filteredNotes);
+
+        return notes.length != filteredNotes.length 
 }
 
 module.exports = {
