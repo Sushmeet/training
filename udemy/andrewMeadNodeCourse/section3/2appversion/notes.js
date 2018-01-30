@@ -53,6 +53,7 @@ const removeNote = (title) => {
 }
 
 const logNote = (note) => {
+    debugger;
     console.log(`Title: ${note.title} \n Body: ${note.body}`);
 }
 

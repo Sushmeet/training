@@ -1,5 +1,9 @@
 
 // node inspect debugging.js ( to run it)
+// c
+// add debugger in ur code.
+// repl
+// type person and see what it looks like
 
 let person = {
     name: 'john',
