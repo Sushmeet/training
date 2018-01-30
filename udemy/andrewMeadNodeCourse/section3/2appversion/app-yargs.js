@@ -5,9 +5,6 @@ node app-yargs.js add --title="secrets from andrew" --body="sushi body"
 for debugging
 nodemon --inspect-brk app-yargs.js read --title="secrets"
 */
-
-console.log("Starting app.js");
-
 const fs = require("fs");
 const _ = require("lodash");
 const argv = require("yargs").argv;
@@ -36,7 +33,11 @@ if (process.argv[2]) {
   } else if (command === "list") {
     console.log("Listing all notes");
 
-    notes.getAll();
+    let allNotes = notes.getAll();
+    console.log(`Printing ${allNotes.length} note(s).`)
+
+    allNotes.forEach((note) => notes.logNote(note))
+
   } else if (command === "read") {
     let noteReturned = notes.getNote(argv.title);
 
