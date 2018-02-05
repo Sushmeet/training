@@ -1,10 +1,10 @@
 const request = require("request");
 
-const geoCode = (argument) => {
-const encodedurl = encodeURIComponent(argument);
+const geoCode = (address) => {
+const encodedAddress = encodeURIComponent(address);
   request.get(
     {
-      url: `https://maps.googleapis.com/maps/api/geocode/json?address=${encodedurl}`,
+      url: `https://mapsgoogleapis.com/maps/api/geocode/json?address=${encodedAddress}`,
       json: true
     },
     (error, response, body) => {
@@ -12,7 +12,7 @@ const encodedurl = encodeURIComponent(argument);
       if (error) {
         console.log("Error connection to google servers", error.code);
       } else if (body.status === "ZERO_RESULTS") {
-        console.log(`no results found for ${argument}`);
+        console.log(`no results found for ${address}`);
       } else if (body.status === "OVER_QUERY_LIMIT") {
         console.log(body.error_message);
       } else if (body.status === "OK") {
