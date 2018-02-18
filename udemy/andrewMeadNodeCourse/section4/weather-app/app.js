@@ -15,4 +15,11 @@ const argv = yargs
   .help()
   .alias("help", "-h").argv;
 
-geoCode(argv.a);
+geoCode(argv.a, (errorMessage, results) => {
+    if (errorMessage) {
+      console.log(errorMessage);
+    }
+    else {
+      console.log(results);
+    }
+});
