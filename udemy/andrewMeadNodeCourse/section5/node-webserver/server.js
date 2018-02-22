@@ -27,5 +27,5 @@ app.get('/bad', (req, res) => {
 
 
 app.listen(process.env.PORT || 3000, process.env.IP || 'localhost', () => {
-    console.log('App has started again');
+    console.log('App has started again on port 3000');
 });
