@@ -16,7 +16,10 @@ app.get('/', (req, res) => {
 });
 
 app.get('/about', (req, res) => {
-    res.render('about.hbs');
+    res.render('about.hbs', {
+        title: 'About Page234',
+        desc: 'this is the about page'
+    });
 });
 
 app.get('/bad', (req, res) => {
