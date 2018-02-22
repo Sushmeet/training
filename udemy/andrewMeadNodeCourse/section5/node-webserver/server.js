@@ -1,7 +1,8 @@
 const express = require('express');
-
+const hbs = require('hbs');
 const app = express();
 
+app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/public'))
 
 app.get('/', (req, res) => {
@@ -15,12 +16,12 @@ app.get('/', (req, res) => {
 });
 
 app.get('/about', (req, res) => {
-    res.send('about page');
+    res.render('about.hbs');
 });
 
 app.get('/bad', (req, res) => {
     res.send({
-        error: 'there is an error'
+        error: 'there is an error2'
     })
 })
 
