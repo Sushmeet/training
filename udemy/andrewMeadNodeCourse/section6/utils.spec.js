@@ -2,6 +2,8 @@ const { add } = require("./utils/utils");
 const expect = require("chai").expect;
 
 
+// expect([2,3,4]) an array toInclude(2)
+
 describe("Utils Unit tests", () => {
   it("should add two numbers", () => {
     expect(add(2, 3)).to.equal(5);
