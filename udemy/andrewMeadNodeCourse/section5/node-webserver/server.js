@@ -4,6 +4,9 @@ const hbs = require('hbs');
 const app = express();
 const fs = require('fs');
 
+
+const port = process.env.PORT || 4000;
+
 hbs.registerPartials(path.join(__dirname + '/views/partials'));
 app.set('view engine', 'hbs');
 
@@ -58,6 +61,6 @@ app.get('/bad', (req, res) => {
 })
 
 
-app.listen(process.env.PORT || 3000, process.env.IP || 'localhost', () => {
-    console.log('App has started again on port 3000');
+app.listen(port, process.env.IP || 'localhost', () => {
+    console.log(`App has started again on port ${port}`);
 });
