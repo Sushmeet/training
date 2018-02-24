@@ -7,11 +7,12 @@ const fs = require('fs');
 hbs.registerPartials(path.join(__dirname + '/views/partials'));
 app.set('view engine', 'hbs');
 
-// register middleware by .use method
+// logging middleware. 
 app.use((req, res, next) => {
     const now = new Date().toString();
     const log = `${now} ${req.method} ${req.url}`;
     console.log(`${now} ${req.method} ${req.url}`);
+
     fs.appendFile('server.log', log + '\n', (err) => {
         if (err) {
             console.log('Unable to append to server.log');
@@ -20,9 +21,9 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use((req, res, next) => {
-    res.render('maintenance.hbs');
-});
+// app.use((req, res, next) => {
+//     res.render('maintenance.hbs');
+// });
 
 app.use(express.static(__dirname + '/public'))
 
