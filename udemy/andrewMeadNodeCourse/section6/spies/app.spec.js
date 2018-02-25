@@ -8,7 +8,6 @@ const app = rewire('./app')
 
 chai.use(spies);
 
-// const app = require("./app");
 // const db = require('./db');
 // const dbMock = sinon.mock(db, 'db1');
 
@@ -55,8 +54,5 @@ someFunc2();
 
    //assert with chai-spies
    expect(someFunc2).to.have.been.called();
-
-
-
 
 */
