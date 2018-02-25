@@ -22,18 +22,16 @@ describe("Spy tests", () => {
       sinon.assert.calledWithExactly(spy, "Andrew", 25);
     });
 
-    it.only("should call save user with user object", () => {
+    it("should call save user with user object", () => {
         const db = {
             saveUser: sinon.spy()
         }
-      app.__set.__('db', db);
+        app.__set__('db', db);
       const email = "sushi@gmail.com";
       const password = "sushi123";
 
       app.handleSignup(email, password);
       sinon.assert.calledWithExactly(db.saveUser,{email,password})
-    //   sinon.assert.calledWithExactly(db.saveUser,{email,password});
-      // expect(db.saveUser).toHaveBeenCalledWith({email, password})
     });
   });
 });
