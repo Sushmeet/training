@@ -1,6 +1,6 @@
 //b.js
 
-const saveUser = () => {
+const saveUser = (user) => {
   console.log("Saving the user", user);
 };
 

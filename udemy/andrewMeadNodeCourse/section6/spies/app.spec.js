@@ -3,11 +3,14 @@ const expect = require("chai").expect;
 const sinon = require("sinon");
 const spies = require("chai-spies");
 
+const rewire = require('rewire');
+const app = rewire('./app')
+
 chai.use(spies);
 
-const app = require("./app");
-const db = require('./db');
-const dbMock = sinon.mock(db, 'db1');
+// const app = require("./app");
+// const db = require('./db');
+// const dbMock = sinon.mock(db, 'db1');
 
 describe("Spy tests", () => {
   describe("#Sinon", () => {
@@ -19,11 +22,16 @@ describe("Spy tests", () => {
       sinon.assert.calledWithExactly(spy, "Andrew", 25);
     });
 
-    xit("should call save user with user object", () => {
+    it.only("should call save user with user object", () => {
+        const db = {
+            saveUser: sinon.spy()
+        }
+      app.__set.__('db', db);
       const email = "sushi@gmail.com";
       const password = "sushi123";
 
       app.handleSignup(email, password);
+      sinon.assert.calledWithExactly(db.saveUser,{email,password})
     //   sinon.assert.calledWithExactly(db.saveUser,{email,password});
       // expect(db.saveUser).toHaveBeenCalledWith({email, password})
     });
