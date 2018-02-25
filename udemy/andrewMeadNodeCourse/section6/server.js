@@ -29,11 +29,9 @@ app.get("/users", (req, res) => {
   res.send(users);
 });
 
-// app.listen(3500, () => {
-//     console.log('App has started on 3500');
-// })
-
-app.listen(3500);
+app.listen(3500, () => {
+    console.log('App has started on 3500');
+})
 
 module.exports = {
   app
