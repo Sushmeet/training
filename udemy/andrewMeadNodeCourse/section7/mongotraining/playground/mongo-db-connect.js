@@ -12,37 +12,36 @@ MongoClient.connect(`mongodb://localhost:27017/${database}`, (err, client) => {
 
   const db = client.db(database);
 
-  db.collection('Todos').insertOne(
+  // db.collection('Todos').insertOne(
+  //   {
+  //     text: "Something to do",
+  //     completed: false
+  //   },
+  //   (err, result) => {
+  //     if (err) {
+  //       console.log("error in inserting to collection", err);
+  //     } else {
+  //       console.log(result.ops);
+  //     }
+  //   }
+  // );
+
+  db.collection("Users").insertOne(
     {
-      text: "Something to do",
-      completed: false
+      name: "Bonny",
+      age: 12,
+      location: "amsterdam"
     },
     (err, result) => {
       if (err) {
-        console.log("error in inserting to collection", err);
+        console.log("error in inserting collection.");
       } else {
         console.log(result.ops);
       }
     }
   );
 
-// Insert new Doc into Users with name , age location
+  // Insert new Doc into Users with name , age location
 
   client.close();
 });
-
-// // Connection URL
-// const url = 'mongodb://localhost:27017';
-
-// // Database Name
-// const dbName = 'myproject';
-
-// // Use connect method to connect to the server
-// MongoClient.connect(url, function(err, client) {
-//   assert.equal(null, err);
-//   console.log("Connected successfully to server");
-
-//   const db = client.db(dbName);
-
-//   client.close();
-// });
