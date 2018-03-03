@@ -30,7 +30,7 @@ app.get("/users", (req, res) => {
 });
 
 app.listen(3500, () => {
-    console.log('App has started on 3500');
+    console.log('App has started on 35000');
 })
 
 module.exports = {

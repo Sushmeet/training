@@ -1,7 +1,7 @@
 const request = require("supertest");
 const expect = require("chai").expect;
 
-const app = require("./server").app;
+//const app = require("./server").app; // uncomment this for test to work.
 
 describe("Express server testing", () => {
   describe("GET /", () => {

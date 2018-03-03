@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha **/*.spec.js",
+    "testall": "mocha *.spec.js",
     "test:watch": "nodemon --exec \"npm test\"",
     "start": "node server.js"
   },
