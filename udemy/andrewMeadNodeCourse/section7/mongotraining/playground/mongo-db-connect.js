@@ -28,9 +28,9 @@ MongoClient.connect(`mongodb://localhost:27017/${database}`, (err, client) => {
 
   db.collection("Users").insertOne(
     {
-      name: "nance",
+      name: "Lance",
       age: 2,
-      location: "Portland"
+      location: "California"
     },
     (err, result) => {
       if (err) {
@@ -40,8 +40,6 @@ MongoClient.connect(`mongodb://localhost:27017/${database}`, (err, client) => {
       }
     }
   );
-
-  // Insert new Doc into Users with name , age location
 
   client.close();
 });

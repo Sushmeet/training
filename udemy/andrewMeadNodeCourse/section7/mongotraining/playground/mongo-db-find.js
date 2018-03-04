@@ -10,7 +10,8 @@ MongoClient.connect(`mongodb://localhost:27017/${database}`, (err, client) => {
 
         const db = client.db(database);
 
-        db.collection(collection).find({name: 'Bonny'}).toArray().then((docs) => {
+
+        db.collection(collection).find(/*{name: 'Bonny'}*/).toArray().then((docs) => {
             console.log(JSON.stringify(docs, undefined, 2));
 
         }, (err) => {
