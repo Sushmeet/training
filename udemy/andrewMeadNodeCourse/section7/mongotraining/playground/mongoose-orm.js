@@ -7,13 +7,18 @@ mongoose.connect(url);
 
 const Todo = mongoose.model("Todo", {
   text: {
-    type: String
+    type: String,
+    required: true,
+    minlength: 1,
+    trim: true,
   },
   completed: {
-    type: Boolean
+    type: Boolean,
+    default: false,
   },
   completedAt: {
-    type: Number
+    type: Number,
+    default: null,
   }
 });
 
@@ -26,12 +31,20 @@ const Todo = mongoose.model("Todo", {
 // console.log(doc);
 // })
 
-const otherTodo = new Todo({
-  text: "this is another todo",
-  completed: true,
-  completedAt: 123
+// const otherTodo = new Todo({
+//   text: "this is another todo",
+//   completed: true,
+//   completedAt: 123
+// });
+
+const emptyTodo = new Todo({
+    text: ' Edit this text '
 });
 
-otherTodo.save((err, doc) => {
+emptyTodo.save((err, doc) => {
+  if (err) {
+    console.log(err);
+  } else {
     console.log(doc);
-})
+  }
+});
