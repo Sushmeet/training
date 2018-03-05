@@ -28,8 +28,8 @@ MongoClient.connect(`mongodb://localhost:27017/${database}`, (err, client) => {
 
   db.collection("Users").insertOne(
     {
-      name: "Lance",
-      age: 2,
+      name: "rony",
+      age: 8,
       location: "California"
     },
     (err, result) => {
