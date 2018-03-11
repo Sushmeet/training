@@ -1,22 +1,29 @@
 <div id="root"></div>
 <script type="text/javascript" src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
 <script type="text/javascript" src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
-<script type="text/javascript">
+<!-- Load Babel -->
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script type="text/babel">
     const rootElement = document.getElementById('root');
-
     // const element = document.createElement('div');
     // element.textContent = 'Hello Sushi';
     // element.className = 'container';
 
     // rootElement.appendChild(element);
     /*global React*/
-    const element = React.createElement('div', {
-        class: 'container',
-        children: ['Hellow World, Good Bye']
-    }, 'joe');
+    // const element = React.createElement('div', {
+    //     class: 'container',
+    //     children: ['Hellow World, Good Bye']
+    // });
 
     console.log(element);
-
     /*global ReactDOM*/
+    const content = 'Hello sushi'
+    const props = {
+        className: "container",
+        children: "hello kitty"
+    }
+    // const element = <div className = "container">{content} </div>
+    const element = <div {...props} />
     ReactDOM.render(element, rootElement);
 </script>
