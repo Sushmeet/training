@@ -4,26 +4,25 @@
 <!-- Load Babel -->
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 <script type="text/babel">
-    const rootElement = document.getElementById('root');
+    const rootElement = document.getElementById('root'); 
     // const element = document.createElement('div');
-    // element.textContent = 'Hello Sushi';
-    // element.className = 'container';
-
+    // element.textContent= 'Hello Sushi'; 
+    // element.className = 'container'; 
     // rootElement.appendChild(element);
-    /*global React*/
-    // const element = React.createElement('div', {
-    //     class: 'container',
-    //     children: ['Hellow World, Good Bye']
-    // });
-
-    console.log(element);
+    /*global React*/ // const element = React.createElement('div', { // class: 'container', // children: ['Hellow World, Good Bye'] // });
     /*global ReactDOM*/
     const content = 'Hello sushi'
-    const props = {
-        className: "container",
-        children: "hello kitty"
-    }
-    // const element = <div className = "container">{content} </div>
-    const element = <div {...props} />
+    const props = { className: "container123", children: "hello kitty" } 
+    // const element = <div className="container">{content} </div>
+    // const element = <div {...props} /> 
+    const welcomeMsg = (msg) => <div> Hello {msg.message} </div>
+ const element =
+<div className="container">
+    {welcomeMsg({message: 'Sushi'})}
+    {welcomeMsg({message: 'Johnny'})}
+</div>
+
+
+     console.log(element);
     ReactDOM.render(element, rootElement);
 </script>
