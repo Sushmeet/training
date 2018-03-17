@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+// create a todo model.
+
 const Todo = mongoose.model("Todo", {
   text: {
     type: String,
