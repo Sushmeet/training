@@ -4,17 +4,32 @@ const { Todo } = require("../models/todo");
 const expect = require("chai").expect;
 
 describe("POST /Todos", () => {
+  const text = "Choclates3";
+  const todoVals = [
+    {
+      text: "donutes"
+    },
+    {
+      text: "gummy bears"
+    }
+  ];
+
   beforeEach("Delete all entries in database", () => {
-    return Todo.remove({}).then(res => {
-      expect(res.ok).to.equal(1);
-    });
+    return Todo.remove({})
+      .then(res => {
+        expect(res.ok).to.equal(1); // Empty Database
+        return Todo.insertMany(todoVals); // insert 2 items.
+      })
+      .then(res => {
+        console.log(res);
+      });
   });
 
   it("should add an item to database and assert with  a call to get request", () => {
     let postItem;
     return request(app)
       .post("/todos")
-      .send({ text: "Express text Nmoy2" }) // sends a JSON post body
+      .send({ text }) // sends a JSON post body
       .expect(200)
       .then(res => {
         postItem = res.body;
@@ -35,7 +50,7 @@ describe("POST /Todos", () => {
       .expect(200)
       .then(res => {
         expect(res.body.text).to.equal(text);
-        return Todo.find();
+        return Todo.find({text});
       })
       .then(todos => {
         expect(todos).to.have.lengthOf(1);
@@ -48,12 +63,14 @@ describe("POST /Todos", () => {
       .post("/todos")
       .expect(400)
       .then(res => {
-        expect(res.body.errors.text.message).to.equal("Path `text` is required.");
+        expect(res.body.errors.text.message).to.equal(
+          "Path `text` is required."
+        );
         return Todo.find();
       })
       .then(todos => {
-        expect(todos).to.have.lengthOf(0);
-        expect(todos).to.be.an('array').that.is.empty;
+        expect(todos).to.have.lengthOf(2);
+        //expect(todos).to.be.an("array").that.is.empty;
       });
   });
 });
