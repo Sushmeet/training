@@ -9,7 +9,6 @@ const app = express();
 app.use(bodyParser.json());
 
 app.post("/Todos", (req, res) => {
-  console.log('Request body', req.body);
   const todo = new Todo({ text: req.body.text });
 
   todo.save().then(
@@ -42,3 +41,7 @@ app.get("/", (req, res) => {
 app.listen(4000, () => {
   console.log("server has started");
 });
+
+module.exports = {
+  app
+}
