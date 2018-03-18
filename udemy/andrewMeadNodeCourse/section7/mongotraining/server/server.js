@@ -8,7 +8,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.post("/Todos", (req, res) => {
+app.post("/todos", (req, res) => {
   const todo = new Todo({ text: req.body.text });
 
   todo.save().then(
@@ -21,7 +21,7 @@ app.post("/Todos", (req, res) => {
   );
 });
 
-app.get("/AllTodos",(req, res) => {
+app.get("/todos",(req, res) => {
   // callback style
   // Todo.find((err, todos) => {
   //   if (err) return console.error(err);

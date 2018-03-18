@@ -13,12 +13,12 @@ describe("POST /Todos", () => {
   it("should add an item to database and assert with  a call to get request", () => {
     let postItem;
     return request(app)
-      .post("/Todos")
+      .post("/todos")
       .send({ text: "Express text Nmoy2" }) // sends a JSON post body
       .expect(200)
       .then(res => {
         postItem = res.body;
-        return request(app).get("/AllTodos");
+        return request(app).get("/todos");
       })
       .then(res => {
         // expect res.body which is arr of object to contain one object postItem.
@@ -30,7 +30,7 @@ describe("POST /Todos", () => {
     const text = "Choclates3";
 
     return request(app)
-      .post("/Todos")
+      .post("/todos")
       .send({ text })
       .expect(200)
       .then(res => {
@@ -45,7 +45,7 @@ describe("POST /Todos", () => {
 
   it("should not add an item to db when no body is sent and then assert directly by calling database", () => {
     return request(app)
-      .post("/Todos")
+      .post("/todos")
       .expect(400)
       .then(res => {
         expect(res.body.errors.text.message).to.equal("Path `text` is required.");
