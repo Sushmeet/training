@@ -17,6 +17,12 @@ mongoose.connect(url, err => {
   }
 });
 
+const closeConn = () => {
+    mongoose.connection.close();
+}
+
+
 module.exports = {
-  mongoose
+  mongoose,
+  closeConn
 };

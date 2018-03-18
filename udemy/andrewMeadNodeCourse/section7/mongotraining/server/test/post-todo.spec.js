@@ -18,11 +18,7 @@ describe("POST /Todos", () => {
     return Todo.remove({})
       .then(res => {
         expect(res.ok).to.equal(1); // Empty Database
-        return Todo.insertMany(todoVals); // insert 2 items.
       })
-      .then(res => {
-        console.log(res);
-      });
   });
 
   it("should add an item to database and assert with  a call to get request", () => {
@@ -69,7 +65,7 @@ describe("POST /Todos", () => {
         return Todo.find();
       })
       .then(todos => {
-        expect(todos).to.have.lengthOf(2);
+        expect(todos).to.have.lengthOf(0);
         //expect(todos).to.be.an("array").that.is.empty;
       });
   });
