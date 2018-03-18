@@ -21,7 +21,6 @@ const closeConn = () => {
     mongoose.connection.close();
 }
 
-
 module.exports = {
   mongoose,
   closeConn
