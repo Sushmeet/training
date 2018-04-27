@@ -29,9 +29,10 @@ app.get("/todos", (req, res) => {
   //   console.log('Get request', todos);
   //   res.status(200).send(todos);
   // })
-  console.log("URL", req.url);
-  console.log("Body", req.body);
-  console.log("Route", req.route);
+  // console.log("URL", req.url);
+  // console.log("Body", req.body);
+  // console.log("Route", req.route);
+
 
   Todo.find().then(todos => {
     res.status(200).send(todos);
@@ -49,7 +50,7 @@ app.get("/todos/:id", (req, res) => {
         if (!todo) {
           return res.status(404).send({});
         }
-        res.send({todo});
+        res.send({ todo });
       })
       .catch(e => {
         res.status(400).send()

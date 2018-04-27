@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+// mongoose is an ORM so it helps
+// to interact with the database.
 // create a todo model.
 
 const Todo = mongoose.model("Todo", {

@@ -14,14 +14,14 @@ describe("POST /Todos", () => {
     }
   ];
 
-  beforeEach("Delete all entries in database", () => {
+  afterEach("Delete all entries in database", () => {
     return Todo.remove({})
       .then(res => {
         expect(res.ok).to.equal(1); // Empty Database
       })
   });
 
-  it("should add an item to database and assert with  a call to get request", () => {
+  it("should add an item to then assert with  a call to get items", () => {
     let postItem;
     return request(app)
       .post("/todos")
@@ -37,7 +37,7 @@ describe("POST /Todos", () => {
       });
   });
 
-  it("should add an item to database and then assert directly by calling database", () => {
+  it("should add an item to  then assert directly in database", () => {
     const text = "Choclates3";
 
     return request(app)
@@ -54,7 +54,7 @@ describe("POST /Todos", () => {
       });
   });
 
-  it("should not add an item to db when no body is sent and then assert directly by calling database", () => {
+  it("should not add an item to db when no body is sent and then assert by calling database", () => {
     return request(app)
       .post("/todos")
       .expect(400)
