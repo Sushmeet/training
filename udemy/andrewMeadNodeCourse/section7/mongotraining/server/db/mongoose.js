@@ -7,7 +7,7 @@ const database = "TodoApp";
 
 console.log("mongoose");
 
-const url = `mongodb://localhost:27017/${database}`;
+const url = (process.env.MONGODB_URI || `mongodb://localhost:27017/${database}`);
 
 mongoose.connect(url, err => {
   if (err) {

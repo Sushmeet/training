@@ -42,7 +42,6 @@ describe("GET /todos/id", () => {
       .get(`/todos/${id}`)
       .expect(404);
 
-    console.log(res.body);
     expect(res.body).to.be.empty;
   });
 
@@ -53,7 +52,6 @@ describe("GET /todos/id", () => {
       .get(`/todos/${hexId}`)
       .expect(404);
 
-    console.log(res.body);
-    expect(res.body).to.be.empty;
+      expect(res.body).to.be.empty;
   });
 });
