@@ -6,6 +6,7 @@ const jab = new Character('popop', 989);
 const thumper = new Fighter('thumper');
 const zapper = new Mage('Zapper');
 
+console.log('\n');
 console.log(jab);
 console.log(thumper);
 console.log(zapper);
