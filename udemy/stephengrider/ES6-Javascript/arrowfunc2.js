@@ -6,5 +6,4 @@ const user = {
     }
 }
 
-
 user.info();
