@@ -1,6 +1,6 @@
 
 const logger = (req, res, next) => {
-    console.log('logging');
+    console.log('logging the logs');
     next()
 }
 
