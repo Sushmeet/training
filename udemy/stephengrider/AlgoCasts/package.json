@@ -1,0 +1,15 @@
+{
+  "name": "interveiw",
+  "version": "1.0.0",
+  "description": "> to run tests in a specific file > `npm test reversestring/test.js`",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
