@@ -31,7 +31,7 @@ const displayRepoNames = (reponames) => {
 
 const displayUser = (user) => {
     console.log(user);
-    getRepositories(user.githubUsername, displayRepoNames);
+    getRepositories(user.githubUsername,  displayRepoNames);
 }
 
 // ---- ALL functions Declared Above.
