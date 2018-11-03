@@ -1,0 +1,6 @@
+Nick    John    waffel  iron    80  2
+Nick    John    blender 200 1
+Nick    John    knife   10  4
+Jabo    robb    waffel  iron    70  2
+Jabo    robb    knife 10 2
+Jabo    robb    pot   20  3
