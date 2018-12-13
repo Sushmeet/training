@@ -1,3 +1,8 @@
+/* this provides and elegant way of implicitly passing along
+   an object reference leading to a cleaner API design and easier re-use.
+
+*/
+
 function identify() {
     return this.name.toUpperCase();
 }
@@ -22,3 +27,4 @@ speak.call(me); // hello, i'm kyle
 speak.call(you); // helllo, i'm reader
 
 
+identify.call()
