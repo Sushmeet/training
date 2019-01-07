@@ -1,0 +1,24 @@
+/* Tag selectors */
+
+body {
+    background-color: lightskyblue;
+}
+
+h1 {
+    color: navy;
+}
+
+h2 {
+    color: navy;
+}
+
+hr {
+    border-style: dotted none none;
+    border-color: grey;
+    border-width: 5px;
+    width: 5%;
+}
+
+/* Class Selectors */
+
+/* ID Selectors */
