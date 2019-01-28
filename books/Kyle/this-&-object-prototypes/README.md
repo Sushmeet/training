@@ -8,4 +8,7 @@
 3. Explicit Binding 
     use call and apply methods on a function and pass in the obj which is to be used as this eg fun.call(obj)
 4. Hard Binding
+5. New Binding
+    By calling a function foo() with new in front of
+    we have constructed a new object and can set that new object as the this for the call. So new is the final way a function call's this can be bound.
 
