@@ -11,7 +11,9 @@ import { GraphQLServer } from "graphql-yoga";
 // Type definition schema
 const typeDefs = `
  type Query {
-    title(title: String): String!
+    greeting(title: String, companyName: String): String!
+    nameArrays(names: [String]): [String!]!
+    add(x: Float!, y: Float!): Float!
     price: Float!
     releaseYear: Int
     rating: Float
@@ -38,7 +40,13 @@ const typeDefs = `
 // Application Resolvers
 const resolvers = {
   Query: {
-    title: () => "product sushi",
+    greeting: (parent, { title, companyName }, ctx, info) => {
+      return `product ${title} company ${companyName}`;
+    },
+    nameArrays: (parent, { names }, ctx, info) => {
+      return names;
+    },
+    add: (parent, { x, y }) => x + y,
     price: () => 3.24,
     releaseYear: () => 1980,
     rating: () => null,
@@ -52,12 +60,12 @@ const resolvers = {
       };
     },
     post: () => {
-        return {
-            id: 3,
-            title: 'Great first post',
-            body: 'Body of the great first post',
-            published: true
-        }
+      return {
+        id: 3,
+        title: "Great first post",
+        body: "Body of the great first post",
+        published: true
+      };
     }
   }
 };
@@ -67,4 +75,4 @@ const server = new GraphQLServer({
   resolvers
 });
 
-server.start(() => console.log("GraphQL Yoga Server has started"));
+server.start(() => console.log("GraphQL Yoga Server has started. Server is running on localhost:4000"));
