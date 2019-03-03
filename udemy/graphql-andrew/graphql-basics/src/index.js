@@ -5,8 +5,8 @@
 // console.log(greeting("bonziii"));
 // console.log(addition(7, 3));
 // console.log(subtract(7, 3));
-import { GraphQLServer } from "graphql-yoga";
-// const { GraphQLServer } = require('graphql-yoga')
+// import { GraphQLServer } from "graphql-yoga"; 
+const { GraphQLServer } = require('graphql-yoga')
 
 // Type definition schema
 const typeDefs = `
