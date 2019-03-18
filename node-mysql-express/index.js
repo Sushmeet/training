@@ -19,13 +19,16 @@ app.post("/createUser", (req, res) => {
     store
       .createUser({
         name: req.body.name,
-        email: req.body.email
+        email: req.body.email,
+        password: req.body.password
       })
       .then(result => {
         res.send(result);
-      });
+      })
+      .catch((err) => {
+        res.status(500).send(err);
+      })
   });
-
 
 app.listen("8000", "localhost", () => {
   console.log("local server on port 8000");
