@@ -5,3 +5,22 @@ body {
 h1 {
     font-weight: normal
 }
+
+div {
+    background-color: skyblue
+}
+
+.top-container {
+    padding: 20px;
+    border: solid 10px;
+    height: 200px;
+    width: 200px;
+}
+
+.middle-container {
+    margin 60px;
+    padding: 20px;
+    height: 200px;
+    width: 200px;
+    background-color: red;
+}
