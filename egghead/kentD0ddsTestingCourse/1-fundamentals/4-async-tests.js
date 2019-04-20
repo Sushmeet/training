@@ -1,4 +1,4 @@
-const sum = (x, y) => x + y;
+const sum = (x, y) => x - y;   // Add function is broken on purpose to see test runner handling async code.
 const difference = (x, y) => x - y;
 
 
@@ -14,9 +14,10 @@ test('Subtract two Numbers', async () => {
     expect(result).toBe(expected);
 });
 
- function test(title, callback) {
+// Our own Custom Test Runner
+async function test(title, callback) {
   try {
-    callback();
+     await callback();
     console.log(`Sucess ${title}`);
   } catch (err) {
     console.error(`Fail ${err}`);
