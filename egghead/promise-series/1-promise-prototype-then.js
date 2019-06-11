@@ -1,15 +1,18 @@
 // const fetch = require('node-fetch')
-const API_URL = "https://jsonplaceholder.typicode.com/todos/1";
+const API_URL = "https://swapi.co/api/films/";
+const output = document.getElementById("output");
 
-const responsePromise = fetch(API_URL);
-console.log('first unresolved promise', responsePromise);
+output.innerText = "Loading...";
 
-// console.log(responsePromise);
+fetch(API_URL)
+  .then(res => res.json())
+  .then(resJson => {
+    output.innerText = getFilmTitles(resJson.results);
+  });
 
-responsePromise.then(res => {
-    const responseJson = res.json()
-  console.log('2 nd promise of json', responseJson);
-  return responseJson
-}).then((resJson) => {
-    console.log('finalresult JSON', resJson)
-})
+function getFilmTitles(filmTitles) {
+ return filmTitles
+    .sort((a, b) => a.episode_id - b.episode_id)
+    .map(result => `${result.episode_id}. ${result.title}`)
+    .join("\n");
+}
