@@ -4,11 +4,19 @@ const output = document.getElementById("output");
 
 output.innerText = "Loading...";
 
+ // .then is a fulfillment handler
 fetch(API_URL)
-  .then(res => res.json())
-  .then(resJson => {
-    output.innerText = getFilmTitles(resJson.results);
-  });
+  .then(res => {
+      if (!res.ok) throw Error(`No response was returned from ${API_URL}`);
+      return res.json()
+    })  
+  .then(films => {
+    output.innerText = getFilmTitles(films.results);
+  })
+  .catch(error => {
+    console.log(error)
+    output.innerText = ':('     
+  })
 
 function getFilmTitles(filmTitles) {
  return filmTitles
