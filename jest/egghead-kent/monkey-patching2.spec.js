@@ -8,6 +8,7 @@ const mockGetWinner = utils.getWinner = jest.fn((player1, player2) => player1); 
 const winner = thumbWar("kent c dodds", "kent wheeler");
 
 it("run this test", () => {
+  expect(winner).toEqual("kent c dodds");
   expect(mockGetWinner.mock.calls).toEqual([
     [ 'kent c dodds', 'kent wheeler' ],
     [ 'kent c dodds', 'kent wheeler' ],

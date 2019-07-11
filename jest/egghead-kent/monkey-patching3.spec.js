@@ -4,7 +4,6 @@ const thumbWar = require("./thumb-war");
 const originalGetWinner = utils.getWinner;
 
 function fn(impl) {
-  console.log('impl---', impl)
   const mockFn = (...banana) => {
     mockFn.mock.calls.push(banana)
     return impl(...banana)
