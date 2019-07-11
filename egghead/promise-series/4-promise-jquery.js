@@ -6,17 +6,13 @@ const spinner = document.getElementById('spinner');
 output.innerText = "Loading...";
 
  // .then is a fulfillment handler
-fetch(API_URL)
-  .then(res => {
-      if (!res.ok) throw Error(`No response was returned from ${API_URL}`);
-      return res.json()
-    })  
+$.getJSON(API_URL)
   .then(films => {
     output.innerText = getFilmTitles(films.results);
     return films;
   })
   .catch(error => {
-    console.log(error)
+    console.warn(error)
     output.innerText = ':('
     return []; // return empty object in case of error.
   })
