@@ -13,10 +13,7 @@ it("run this test", () => {
     [ 'kent c dodds', 'kent wheeler' ],
   ])
   expect(mockGetWinner.mock.calls.length).toBe(2);
-
-
-
-  
+    
   //  expect(winner).toEqual("kent c dodds");
   // expect(mockGetWinner).toHaveReturnedWith("kent c dodds");
   // expect(mockGetWinner).toHaveBeenCalledTimes(2)

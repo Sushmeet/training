@@ -1,4 +1,4 @@
-function forEach222(items, callback: (items: any) => any) {
+function forEach222(items, callback) {
   for (let index = 0; index < items.length; index++) {
     callback(items[index]);
   };
