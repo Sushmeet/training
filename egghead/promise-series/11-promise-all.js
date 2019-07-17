@@ -6,11 +6,11 @@ function resolveAfter(ms, value) {
     })
 }
 
-const promise1 = resolveAfter(1000, 'A');
-const promise2 = resolveAfter(500, 'B');
+const promise1 = resolveAfter(500, 'A');
+const promise2 = resolveAfter(1000, 'B');
 
-Promise.race([promise1, promise2])
-    .then((res) => {
-        console.log(res);
+Promise.all([promise1, promise2])
+    .then((values) => {
+        console.log('1', values[0]);
     })
 
