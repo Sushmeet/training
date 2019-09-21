@@ -5,4 +5,4 @@ Then run
 
 
 There is a little-known command npx that is used to run binaries from modules that are installed locally in node_modules.
-`npx ts-node start.ts`
+`npx ts-node 1-start.ts`
