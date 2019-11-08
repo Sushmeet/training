@@ -42,7 +42,8 @@ app.use(authentication);
 app.use(express.static(publicPath));
 app.get('/user/:userId', (req, res, err) => {
     const userId = req.params.userId;
-    res.status(200).end(`UserID is ${userId}`);
+    // res.status(200).end(`UserID is ${userId}`);
+    res.status(200).json('internal service error');
 })
 
 app.get('/ejs', (req, res) => {

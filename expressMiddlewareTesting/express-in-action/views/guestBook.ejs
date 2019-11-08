@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            New Guest Entry Form
+        </title>
+    </head>
+    <body>
+        <h1>Names of all the guests</h1>
+        <%= guestBook.join(', ')   %>
+        <% guestBook.forEach((guest) => { %>
+         <ul>
+             <li>
+                 <%= guest %>
+             </li>
+         </ul>
+        <%  })   %>
+    </body>
+</html>
