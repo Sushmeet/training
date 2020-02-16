@@ -6,20 +6,20 @@
 class Stack {
     constructor() {
         this.count = 0;
-        this.stack = [];
+        this.storage = [];
     }
 
     length() {
         return this.count;
     }
     push(item) {
-        this.stack.push(item)
+        this.storage.push(item)
         this.count++;
     }
 
     pop() {
         this.count--;
-        return this.stack.pop()
+        return this.storage.pop()
     }
 }
 
