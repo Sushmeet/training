@@ -1,0 +1,13 @@
+# docker base image being used node:version
+FROM node:12.14.1 
+# copy the index file into the docker container
+COPY index.js .
+# WORKDIR
+
+# consider docker to be a firewall
+# so u have to tell which port to expose
+# in this case port 4000 is the port
+# application is listening on.
+EXPOSE 4000
+# cmd we are starting the node application.
+CMD ["node", "index.js"]
