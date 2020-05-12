@@ -1,6 +1,4 @@
 // array destructure values into an object
-
-
 const sushi = () => {
     return [1, 2, 3, 4, 5, 6]
 };
