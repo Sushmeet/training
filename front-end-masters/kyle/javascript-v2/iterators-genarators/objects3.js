@@ -8,3 +8,8 @@ for (const property in object) {
 // "a: 1"
 // "b: 2"
 // "c: 3"
+
+
+const objectsSpreading = {...object, ...{f: 3}, ...{a: 10}}
+
+console.log('multiple objects spread', objectsSpreading);
