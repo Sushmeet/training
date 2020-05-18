@@ -4,12 +4,12 @@
   "description": "unittestig",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --watch"
   },
   "author": "sushmeet",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
-    "jest": "^24.8.0"
+    "jest": "^26.0.1"
   }
 }

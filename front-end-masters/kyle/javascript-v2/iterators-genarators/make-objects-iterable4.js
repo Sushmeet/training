@@ -15,6 +15,9 @@
 //     console.log(value);
 // }
 
+// arrow function this key word lexically adopts the parent object
+// which is what we want in the next function.
+
 const obj2 = {
   a: 1,
   b: 2,
