@@ -21,10 +21,8 @@ const _ = {};
 
   ========================================================================== */
 
-_.nth = function(array, index) {
-return (index >= 0) ? 
-        array[index] :
-        array[array.length + index]
+_.nth = function (array, index) {
+  return index >= 0 ? array[index] : array[array.length + index];
 };
 
 // TEST CASES
@@ -34,7 +32,7 @@ const weapons = [
   "Candlestick",
   "Rope",
   "Knife",
-  "Wrench"
+  "Wrench",
 ];
 
 // We should get the first element of the array.
