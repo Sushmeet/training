@@ -17,5 +17,8 @@ console.log('stored value', multiplyBy2.stored) // 5 still works.
 // So finally we can see really a function in javascript is both a function and an object.
 
 
+// So all functions have on them a property called prototype, which is itself an empty object.
+
+// we need to introduce arrow functions which bind this lexically
 
 
