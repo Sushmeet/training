@@ -3,5 +3,10 @@
   "version": "1.0.0",
   "description": "sushmeet",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.0.0-alpha.8",
+    "express-ws": "^4.0.0",
+    "ws": "^7.3.0"
+  }
 }
