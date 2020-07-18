@@ -11,9 +11,9 @@ This is the principle of encapsulation
 const user = {};
 user.name = 'Sushi'
 user.score = 100;
-user.increment = () => {
+user.increment = function() {
 // return user.score += 1 
-   user.score++
+   this.score++
 }
 
 console.log(user);

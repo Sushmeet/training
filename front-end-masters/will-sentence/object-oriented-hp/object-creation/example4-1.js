@@ -16,7 +16,8 @@ function UserCreator(name, score) {
 UserCreator.prototype.increment = function() {
     // this here is an implicit paramater. 
     this.score++
-} // so this way u don't keey creating the function on each object. it exists in the prototype object only
+} // so this way u don't keep creating the function on each object. 
+  // it exists in the prototype object only
 
 const jombaa = new UserCreator('sushi', 100)
 console.log(jombaa);

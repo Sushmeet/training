@@ -6,8 +6,8 @@ Objects - store functions with their associated data!
 This is the principle of encapsulation
 */
 const functionStore = {
-   increment: () => {
-      user.score++
+   increment: function() {
+      this.score++
    }
 }
 

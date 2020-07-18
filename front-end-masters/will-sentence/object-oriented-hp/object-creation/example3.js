@@ -4,8 +4,8 @@ function userCreator(name, score) {
     newUser.name = name
     newUser.score = score
 
-    newUser.increment = () => {
-        newUser.score++
+    newUser.increment = function() {
+        this.score++
     }
     return newUser;
 }

@@ -8,9 +8,8 @@ This is the principle of encapsulation
 const user = Object.create(null)
 user.name = 'Sushi'
 user.score = 100;
-user.increment = () => {
-// return user.score += 1 
-   user.score++
+user.increment = function() {
+   this.score++
 }
 
 console.log(user);
