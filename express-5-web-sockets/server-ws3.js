@@ -33,7 +33,7 @@ wss.on('connection', function connection(ws, request, client) {
 
 app.get('/home', (req, res) => {
     res.send({
-        name: 'sushi home'
+        name: 'sushi home dudeee chakdeeeeeee'
     })
 })
 
