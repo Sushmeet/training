@@ -3,6 +3,9 @@
 // react dom to render the contents on the web browser
 // react native to render the contents on the mobile device.
 
+// const Car = require('./car')
+
+
 const Pet = ({ name, animal, breed }) => {
   return React.createElement("div", {}, [
     React.createElement("h1", {}, name),
