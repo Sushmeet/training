@@ -1,4 +1,5 @@
 /*
+https://jakearchibald.com/2017/await-vs-return-vs-return-await/
 a return await without a try catch block is redundant.
 because you could just return the promise back.
 
