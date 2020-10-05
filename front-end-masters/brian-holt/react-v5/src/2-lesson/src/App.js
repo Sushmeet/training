@@ -1,46 +1,70 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import faker from 'faker';
-import ApprovalCard from './ApprovalCard';
-import CommentDetail from './CommentDetail';
+// import SeasonsDisplay from './SeasonsDisplay';
 
-// create a react component
-const App = () => {
-  return (
-    <div className="ui container comments">
-      <ApprovalCard>
+/*
+Need to get the user's physical Location
+Need to determine the current month
+Need to change text and styling based on the location and month.
+*/
+
+// Functional Component
+// const App = () => {
+//   window.navigator.geolocation.getCurrentPosition(
+//     (position) => console.log('position----', position),
+//     (err) => console.log('err', err)
+//   );
+//   return (
+//     <div>
+//       <h1>Hi there</h1>
+//     </div>
+//   );
+// };
+
+// Equivalent Class Component.
+class App extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      lat: null,
+      errorMessage: null,
+    };
+
+    window.navigator.geolocation.getCurrentPosition(
+      (position) =>
+        this.setState({
+          lat: position.coords.latitude,
+        }),
+      (err) =>
+        this.setState({
+          errorMessage: err.message,
+        })
+    );
+  }
+
+  render() {
+    if (!this.state.errorMessage && this.state.lat) {
+      return (
         <div>
-          <h4>Warning!!!</h4>
+          <h1>Latitude: {this.state.lat}</h1>
         </div>
-        Are you sure you wanna do this?
-      </ApprovalCard>
-      <ApprovalCard>
-        <CommentDetail
-          authorName="Sam"
-          blogPost="Sam's first great blog post!"
-          time="Today at 6pm"
-          avatar={faker.image.avatar()}
-        />
-      </ApprovalCard>
-      <ApprovalCard>
-        <CommentDetail
-          authorName="John"
-          blogPost="Johns has a Great Greece post!"
-          time="Today at 1am"
-          avatar={faker.image.avatar()}
-        />
-      </ApprovalCard>
-      <ApprovalCard>
-        <CommentDetail
-          authorName="Sarah"
-          blogPost="Sarah has a very cool post!"
-          time="Today at 10pm"
-          avatar={faker.image.avatar()}
-        />
-      </ApprovalCard>
-    </div>
-  );
-};
+      );
+    }
+    if (!this.state.lat && this.state.errorMessage) {
+      return (
+        <div>
+          <h1>Error: {this.state.errorMessage}</h1>
+        </div>
+      );
+    }
 
-// render JSX to the browser
+    return (
+      <div>
+        <h1>Loading</h1>
+      </div>
+    );
+  }
+}
+
 ReactDOM.render(<App />, document.getElementById('root'));
