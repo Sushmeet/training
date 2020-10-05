@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import SeasonsDisplay from './SeasonsDisplay';
+import SeasonsDisplay from './SeasonsDisplay';
 
 /*
 Need to get the user's physical Location
@@ -23,14 +23,19 @@ Need to change text and styling based on the location and month.
 
 // Equivalent Class Component.
 class App extends React.Component {
-  constructor() {
-    super();
+  // constructor() {
+  //   super();
 
-    this.state = {
-      lat: null,
-      errorMessage: null,
-    };
+  //   this.state = {
+  //     lat: null,
+  //     errorMessage: null,
+  //   };
+  // }
 
+  state = { lat: null, errorMessage: '' };
+
+  componentDidMount() {
+    console.log('My component was rendered to the screen');
     window.navigator.geolocation.getCurrentPosition(
       (position) =>
         this.setState({
@@ -43,11 +48,15 @@ class App extends React.Component {
     );
   }
 
+  componentDidUpdate() {
+    console.log('My component was just updated');
+  }
+
   render() {
     if (!this.state.errorMessage && this.state.lat) {
       return (
         <div>
-          <h1>Latitude: {this.state.lat}</h1>
+          <SeasonsDisplay lat={this.state.lat} />
         </div>
       );
     }
