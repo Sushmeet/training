@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Spinner from './Spinner'
 import SeasonsDisplay from './SeasonsDisplay';
 
 /*
@@ -51,12 +52,11 @@ class App extends React.Component {
   componentDidUpdate() {
     console.log('My component was just updated');
   }
-
   render() {
     if (!this.state.errorMessage && this.state.lat) {
       return (
         <div>
-          <SeasonsDisplay lat={this.state.lat} />
+          <SeasonsDisplay lat={this.state.lat}  />
         </div>
       );
     }
@@ -70,7 +70,7 @@ class App extends React.Component {
 
     return (
       <div>
-        <h1>Loading</h1>
+        <Spinner  message="Please accept location request"/>
       </div>
     );
   }
