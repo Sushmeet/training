@@ -5,11 +5,13 @@ class SearchBar extends React.Component {
     term: "",
   };
 
-  onInputChange = (event) => {
+  onInputChange = async (event) => {
     event.preventDefault();
+    const term = this.state.term;
+      this.props.onTermSubmit(term);
   };
 
-  render() {
+    render() {
     return (
       <div className="ui segment">
         <form onSubmit={this.onInputChange} className="ui form">
@@ -26,7 +28,7 @@ class SearchBar extends React.Component {
               }}
             />
           </div>
-        </form>
+            </form>
       </div>
     );
   }
