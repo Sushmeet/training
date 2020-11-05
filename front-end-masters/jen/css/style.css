@@ -1,0 +1,61 @@
+/* we delcare global variables inside the root element */
+
+/* Advantages of using var() are:
+makes the code easier to read (more understandable)
+makes it much easier to change the color values
+To change the blue and white color to a softer blue and white, 
+you just need to change the two variable values: */
+
+:root {
+  --yellow: #ffffcc;
+  --green: green;
+  --red: red;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--yellow);
+}
+
+img {
+  border: 10px solid var(--green);
+}
+
+h1 {
+  border: 10px dotted var(--red);
+}
+
+blockquote {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 3rem;
+  font-style: italic;
+}
+
+cite {
+  font-size: 1.5rem;
+}
+
+ul a:link {
+  font-weight: bold;
+  font-size: 2rem;
+  text-decoration: none;
+  color: brown;
+}
+
+a:visited {
+  text-decoration: underline;
+  font-weight: normal;
+}
+
+a:hover {
+  color: lightskyblue;
+}
+
+a:active {
+  color: red;
+}
+
+a.harvard {
+  color: greenyellow;
+}

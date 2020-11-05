@@ -1,0 +1,11 @@
+div {
+  border: 5px solid #00ff15;
+  margin: 1rem;
+  padding: 1rem; /* put the same padding up, down, left, right  */
+  /* padding-bottom: 1rem;
+  padding-top: 1rem; */
+}
+
+.box1 {
+  margin: -1rem;
+}
