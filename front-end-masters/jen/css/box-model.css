@@ -1,11 +1,51 @@
-div {
+/* div {
   border: 5px solid #00ff15;
   margin: 1rem;
-  padding: 1rem; /* put the same padding up, down, left, right  */
-  /* padding-bottom: 1rem;
+  padding: 1rem; put the same padding up, down, left, right  */
+/* padding-bottom: 1rem;
   padding-top: 1rem; */
+/* } */
+
+/* .box1 {
+  margin: -1rem;
+} */
+
+div {
+  margin-bottom: 2rem;
+  /* padding: 1rem; */
 }
 
 .box1 {
-  margin: -1rem;
+  border: 5px solid red;
+  background-color: orange;
+  width: 35%
+  /* margin: 0; */
+}
+
+.box2 {
+  border: 5px solid blue;
+  background-color: lightblue;
+}
+
+.box2 p {
+  /* margin: 0; */
+  margin-top: 0;
+}
+
+.box2 h1 {
+  /* margin: 0; */
+  margin-bottom: 0;
+}
+
+body {
+  background-color: lightgoldenrodyellow;
+}
+
+p {
+  border: 5px dotted black;
+}
+
+.box3 {
+  background-image: url(http://placekitten.com/200/300);
+  height: 150px;
 }
