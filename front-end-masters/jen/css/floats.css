@@ -1,0 +1,30 @@
+.floatleft {
+  float: left;
+  margin: 0rem 1rem 1rem 1rem
+  /* margin-right: 1rem; */
+}
+
+.floatright {
+  float: right;
+  margin: 0rem 1rem 1rem 1rem
+}
+
+article {
+  width: 30rem;
+  /* height: 45rem; */
+  border: 3px solid red;
+  margin: 0rem auto;
+  text-align: justify;
+}
+
+article p {
+  padding-right: 1rem;
+}
+
+article:after {
+  content: "";
+  display: table;
+  clear: both ;
+}
+/* trbl */
+
