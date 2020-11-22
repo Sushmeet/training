@@ -28,3 +28,7 @@ To change something in a **State** you need to dispatch an Action. In redux acti
 # Reducer 
 Again reducers are basically just javascript functions. The function signature takes an 
 action and a state, and returns the next state of the app.
+
+
+# Action Creators
+In redux action creators are just functions which return JS objects called action

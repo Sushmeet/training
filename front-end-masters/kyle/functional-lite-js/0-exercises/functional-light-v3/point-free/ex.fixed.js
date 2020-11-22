@@ -1,5 +1,6 @@
 "use strict";
 
+// predicate is a boolean value function in mathamatics.
 function not(predicate) {
 	return function negated(...args){
 		return !predicate( ...args );

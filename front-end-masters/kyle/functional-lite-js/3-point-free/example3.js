@@ -10,5 +10,7 @@ function isOdd(num) {
 
 const isEven = not(isOdd);
 const result = isEven(10);
+const odd = isOdd(5)
 
-console.log("result", result);
+console.log("result isEven", result);
+console.log("odd", odd)
