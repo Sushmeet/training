@@ -5,6 +5,7 @@ for async actions we must use redux-thunk.
 */
 
 import jsonplaceholder from "../apis/jsonPlaceHolder";
+import _ from "lodash";
 
 // export const fetchPosts = async () => {
 //   const response = await jsonplaceholder.get("/posts");
@@ -16,11 +17,27 @@ import jsonplaceholder from "../apis/jsonPlaceHolder";
 //   };
 // };
 
+export const fetchPostsAndUser = () => async (dispatch, getState) => {
+  await dispatch(fetchPosts());
+  const userIds = _.uniq(_.map(getState().posts, "userId"));
+  userIds.forEach((userId) => dispatch(fetchUserById(userId)));
+};
+
 export const fetchPosts = () => {
   return async (dispatch) => {
     const { data } = await jsonplaceholder.get("/posts");
     dispatch({
       type: "FETCH_POSTS",
+      payload: data,
+    });
+  };
+};
+
+export const fetchUserById = (id) => {
+  return async (dispatch) => {
+    const { data } = await jsonplaceholder.get(`/users/${id}`);
+    dispatch({
+      type: "FETCH_USER",
       payload: data,
     });
   };
