@@ -1,0 +1,23 @@
+/* 
+Flexbox layput module makes it easier to 
+design flexible layout structure
+without using float or positiong.
+
+*/
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: DodgerBlue;
+  flex-direction: row;
+  /* align-items: flex-end */
+  justify-content: flex-start;
+}
+
+.flex-container div {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border: 10px solid red;
+    margin: 10px;
+    font-size: 30px;
+}
