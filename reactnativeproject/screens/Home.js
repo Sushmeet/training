@@ -1,8 +1,52 @@
-import React from 'react';
-import { View, StyleSheet, StatusBar, FlatList } from 'react-native';
+import React, { useState, useCallback, useEffect } from 'react';
+import {
+  View,
+  StyleSheet,
+  FlatList,
+  RefreshControl,
+  Text,
+  TouchableOpacity,
+} from 'react-native';
 import PalettePreview from '../components/PalettePreview';
 
-const Home = ({ navigation }) => {
+const Home = ({ navigation, route }) => {
+  const url = 'https://color-palette-api.kadikraman.now.sh/palettes';
+  const newColorPalette = route.params ? route.params.newPallette : undefined;
+
+  const [colorPalette, setcolorPalette] = useState([]);
+  const [isRefreshing, setRefreshing] = useState(false);
+
+  const fetchColorPallette = useCallback(async () => {
+    const response = await fetch(url);
+
+    if (response.ok) {
+      const palettes = await response.json();
+      setcolorPalette(palettes);
+    }
+    // colorPalette //[{colors: [], paletteName: "somename", id: 9}]
+  }, []);
+
+  const handleRefresh = useCallback(async () => {
+    setRefreshing(true);
+    await fetchColorPallette();
+    setTimeout(() => {
+      setRefreshing(false);
+    }, 1000);
+  }, [fetchColorPallette]);
+
+  useEffect(() => {
+    fetchColorPallette();
+  }, [fetchColorPallette]);
+
+  useEffect(() => {
+    if (newColorPalette) {
+      setcolorPalette((currentColorPalette) => [
+        newColorPalette,
+        ...currentColorPalette,
+      ]);
+    }
+  }, [newColorPalette]);
+
   const SOLARIZED = [
     { colorName: 'Base03', hexCode: '#002b36' },
     { colorName: 'Base02', hexCode: '#073642' },
@@ -68,13 +112,35 @@ const Home = ({ navigation }) => {
     );
   };
 
+  const modalButton = () => {
+    return (
+      <View>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('ColorPaletteModal')}
+        >
+          <Text style={styles.buttonText}>Add a Color Scheme</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  };
+
   return (
     <View style={styles.container}>
       <FlatList
         style={styles.list}
-        data={COLOR_PALETTES}
+        data={colorPalette}
         renderItem={renderItem}
         keyExtractor={(item) => item.paletteName}
+        refreshControl={
+          <RefreshControl
+            refreshing={isRefreshing}
+            onRefresh={() => handleRefresh()}
+            // onRefresh={handleRefresh}
+            title={'Please Wait Refreshing'} // ios specific check android property
+            tintColor={'red'} // ios specific check android property
+          />
+        }
+        ListHeaderComponent={modalButton}
       />
     </View>
   );
@@ -96,6 +162,12 @@ const styles = StyleSheet.create({
   wrapperCustom: {
     borderRadius: 8,
     padding: 6,
+  },
+  buttonText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: 'teal',
+    marginBottom: 20,
   },
 });
 

@@ -29,7 +29,7 @@ const PalettePreview = ({ onPress, palette }) => {
           style={styles.list}
           data={previewColorsArray}
           renderItem={renderItem}
-          keyExtractor={(item) => item.paletteName}
+          keyExtractor={(item) => item.colorName}
         />
       </Pressable>
     </View>
