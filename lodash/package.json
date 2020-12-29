@@ -12,6 +12,6 @@
   "author": "sushmeet sunger",
   "license": "ISC",
   "dependencies": {
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.19"
   }
 }
