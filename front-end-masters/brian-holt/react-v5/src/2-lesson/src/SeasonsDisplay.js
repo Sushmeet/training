@@ -1,7 +1,6 @@
 import './SeasonDisplay.css';
 import React from 'react';
 
-
 const getSeason = (lat, month) => {
   const isNorthernHemisphere = lat > 0;
   const isMonthBetweenAprilAndAugust = month > 2 && month < 9;

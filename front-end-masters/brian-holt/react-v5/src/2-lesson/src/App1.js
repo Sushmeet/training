@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Pet from './Pet';
 import Car from './Car';
-import SearchParams from './SearchParams'
+import SearchParams from './SearchParams';
 
 const App = () => {
-// After with JSX
+  // After with JSX
   return (
     <div>
       <h1>Adopt Me Dude99999!</h1>
@@ -17,7 +17,7 @@ const App = () => {
       <Car name="honda" model="accord" />
       <SearchParams />
     </div>
-  )
+  );
   //  Before JSX
   // return React.createElement('div', {}, [
   //   React.createElement('h1', {}, 'Adopt Me!'),

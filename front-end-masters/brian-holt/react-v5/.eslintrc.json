@@ -10,8 +10,9 @@
   "rules": {
     "react/prop-types": 0,
     "no-console": 1,
-    "react-hooks/rules-of-hooks": 2,
-    "react-hooks/exhaustive-deps": 1 
+    // "react-hooks/rules-of-hooks": 2,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": 1
   },
   "plugins": ["react", "import", "jsx-a11y", "react-hooks"],
   "parser": "babel-eslint",

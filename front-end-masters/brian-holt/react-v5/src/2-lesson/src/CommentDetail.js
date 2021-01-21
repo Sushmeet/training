@@ -1,8 +1,7 @@
-import React from "react"
+import React from 'react';
 // import faker from 'faker';
 
-
-const CommentDetail = ({authorName, blogPost, time, avatar}) => {
+const CommentDetail = ({ authorName, blogPost, time, avatar }) => {
   return (
     <div className="comment">
       <a href="/" className="avatar">
@@ -15,10 +14,10 @@ const CommentDetail = ({authorName, blogPost, time, avatar}) => {
         <div className="metadata">
           <span className="date">{time}</span>
         </div>
-              <div className="text">{blogPost}</div>
+        <div className="text">{blogPost}</div>
       </div>
     </div>
   );
 };
 
-export default CommentDetail
+export default CommentDetail;
