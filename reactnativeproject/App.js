@@ -52,7 +52,10 @@ const App = () => {
     <NavigationContainer>
       {/* Give the status bar stuff like battery, wifi and time a white color */}
       <StatusBar barStyle="light-content" backgroundColor="#6a51ae" />
-      <RootStack.Navigator mode="modal">
+      <RootStack.Navigator
+        mode="modal"
+        screenOptions={{ animationEnabled: false }}
+      >
         <RootStack.Screen
           name="Main"
           component={MainStackScreen}
@@ -61,6 +64,7 @@ const App = () => {
         <RootStack.Screen
           name="ColorPaletteModal"
           component={ColorPaletteModal}
+          options={{ animationEnabled: true }}
         />
       </RootStack.Navigator>
     </NavigationContainer>
