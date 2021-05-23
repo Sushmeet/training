@@ -1,16 +1,16 @@
-function MaterialUI() {
+import { Button, Typography } from "@material-ui/core";
+import { useStyles } from "../components/homepage.styles";
+
+const MaterialUI = () => {
+  const classes = useStyles();
   return (
-    <div className="container">
-      Welcome to Next.js!
-      <style jsx>{`
-        .container {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-      `}</style>
+    <div className={classes.container}>
+      <h1>Welcome to Next.js!</h1>
+      <Button>
+        <Typography color="primary">Click Me</Typography>
+      </Button>
     </div>
   );
-}
+};
 
 export default MaterialUI;
