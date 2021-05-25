@@ -1,7 +1,6 @@
 import { makeStyles, createStyles } from "@material-ui/core";
 
 export const useStyles = makeStyles((theme) => {
-  console.log("theme----", theme);
   return createStyles({
     container: {
       display: "flex",
