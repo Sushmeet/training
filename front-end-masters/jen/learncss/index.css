@@ -83,3 +83,55 @@ a:hover {
 .email {
   margin-top: 3rem;
 }
+
+/* navigation bar */
+.navigation {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.navheader {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+
+nav ul a {
+  color: var(--white);
+  text-decoration: none;
+  font-family: var(--sans);
+  font-weight: bold;
+}
+
+.icon {
+  font-size: 150%;
+  color: var(--aqua);
+}
+.icon:hover {
+  color: var(--magenta)
+}
+
+.name-icon {
+  font-size: 100%;
+  color: var(--aqua);
+}
+
+.name-icon:hover {
+  color: var(--magenta)
+}
+
+.button {
+  background-color: var(--magenta);
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.button:hover {
+  color: var(--white);
+  background-color: var(--hotmag);
+}
