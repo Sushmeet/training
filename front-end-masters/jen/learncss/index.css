@@ -48,7 +48,9 @@ a:hover {
 
 /* intro styles */
 #intro {
-  padding-bottom: 10rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1rem 10rem 1rem;
 }
 
 #intro p {
@@ -86,6 +88,8 @@ a:hover {
 
 /* navigation bar */
 .navigation {
+  margin: 0;
+  padding: 0;
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
@@ -100,6 +104,11 @@ a:hover {
   text-align: center;
 }
 
+.navigationBar {
+  font-family: var(--mono);
+  font-size: 80%;
+  padding: 4rem 1rem;
+}
 
 nav ul a {
   color: var(--white);
@@ -113,7 +122,7 @@ nav ul a {
   color: var(--aqua);
 }
 .icon:hover {
-  color: var(--magenta)
+  color: var(--magenta);
 }
 
 .name-icon {
@@ -122,7 +131,7 @@ nav ul a {
 }
 
 .name-icon:hover {
-  color: var(--magenta)
+  color: var(--magenta);
 }
 
 .button {
@@ -134,4 +143,31 @@ nav ul a {
 .button:hover {
   color: var(--white);
   background-color: var(--hotmag);
+}
+
+@media screen and (min-width: 800px) {
+  .navigationBar {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .navheader {
+    flex-basis: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  font-size: 3rem;
+  padding: 0;
+  margin: 2rem 0;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.footerHeader {
+  text-align: center;
 }
