@@ -263,44 +263,26 @@ nav ul a {
   }
 
   .text {
-    grid-column: 4/11;
-    grid-row: 1/2;
-    order: 2;
-    text-align: right;
-  }
-
-  /* .text {
     grid-column: 5/11;
     grid-row: 1/2;
     order: 2;
     text-align: right;
-  }  */
+  }
 
   #projects ul {
     justify-content: flex-end;
   }
 
   #projects .reverse .text {
-    grid-column: 1/8;
+    grid-column: 1/7;
     /* order: 2; */
     text-align: left;
   }
 
-  /* #projects .reverse .text {
-    grid-column: 1/7;
-    order: 2;
-    text-align: left;
-  } */
-
   #projects .reverse img {
-    grid-column: 7/11;
-    grid-row: 1/2;
-  }
-
-  /*   #projects .reverse img {
     grid-column: 6/11;
     grid-row: 1/2;
-  } */
+  }
 
   #projects .reverse ul {
     justify-content: flex-start;
