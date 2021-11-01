@@ -1,0 +1,16 @@
+.button {
+  color: black;
+  background-color: lightblue;
+}
+
+.navBar {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  font-size: x-large;
+  text-decoration: none;
+}
+
+.navBarAnchor {
+  text-decoration: none;
+}

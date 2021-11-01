@@ -1,20 +1,23 @@
-// export default () => <h1>hello</h1>;
-import Link  from "next/link";
+// pages/index.jsx
+/** @jsxRuntime classic */
+/** @jsx jsx */
 
-const Home = () => {
-  return (
-    <>
-      <h1>Home Page</h1>
-      <p>welcome to the home page</p>
-      <Link href="/docs">
-        <a>go to docs</a>
-      </Link>
-      <hr></hr>
-      <Link href="/notes">
-        <a>go to notes</a>
-      </Link>
-    </>
-  );
-};
+import { jsx } from "theme-ui";
+import Link from "next/link";
 
-export default Home;
+export default () => (
+  <div sx={{ height: `calc(100vh - 60px)` }}>
+    <div
+      sx={{
+        variant: "containers.page",
+        display: "flex",
+        alignItems: "center",
+        height: "100%",
+      }}
+    >
+      <h1 sx={{ fontSize: 8, my: 0 }}>
+        This is a really dope note taking app.
+      </h1>
+    </div>
+  </div>
+);

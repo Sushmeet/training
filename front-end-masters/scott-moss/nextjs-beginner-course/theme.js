@@ -1,7 +1,11 @@
 import { roboto } from "@theme-ui/presets";
 
-const theme = {
+export const theme = {
   ...roboto,
+  colors: {
+    ...roboto.colors,
+    background: 'black',
+  },
   containers: {
     card: {
       boxShadow: "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)",
@@ -22,4 +26,6 @@ const theme = {
   },
 };
 
-export default theme;
+console.log('theme----', theme);
+
+// export default theme;
