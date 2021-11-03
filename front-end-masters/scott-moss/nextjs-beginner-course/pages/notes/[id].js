@@ -1,6 +1,6 @@
 // pages/[id].jsx
-/** @jsxRuntime classic */
-/** @jsx jsx */
+/** @jsxImportSource theme-ui */
+
 
 import { jsx } from "theme-ui";
 import { useRouter } from "next/router";

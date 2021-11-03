@@ -1,6 +1,5 @@
-// pages/index.jsx
-/** @jsxRuntime classic */
-/** @jsx jsx */
+/** @jsxImportSource theme-ui */
+
 
 import { jsx } from "theme-ui";
 import Link from "next/link";
