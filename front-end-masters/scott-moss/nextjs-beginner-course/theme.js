@@ -4,7 +4,7 @@ export const theme = {
   ...roboto,
   colors: {
     ...roboto.colors,
-    background: 'black',
+    background: "black",
   },
   containers: {
     card: {
@@ -26,6 +26,6 @@ export const theme = {
   },
 };
 
-console.log('theme----', theme);
+// console.log('theme----', theme);
 
 // export default theme;
