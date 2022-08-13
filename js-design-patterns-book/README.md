@@ -1,5 +1,3 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
 First, run the development server:
@@ -32,3 +30,13 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Curriculum
+
+Tech wise here is what I can tell you tech wise:
+
+- know the next js data fetching basics: ssg, ssr, isr, swr and potentially middleware.
+- understand how they apply to experiments and how to maximize core web vitals
+- make sure you read react 18 and know server components. Not in details but the big ideas.
+- understand “the edge” and cool new web techs in broad stroke, just keep a bit up to date with tu blogs and twitter etc
+- react optimization basics (callback, memo, lifting state up)

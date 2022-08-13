@@ -1,15 +1,21 @@
 import { useState, useEffect } from "react";
 
-const ServerSideRender = (props) => {
+const ServerSideRender = ({ localTime }) => {
   return (
     <>
       <h1>Hello Sushi</h1>
-      <h2>It is title tile {props.localTime}</h2>
+      <h2>It is title {localTime}</h2>
     </>
   );
 };
 
-export const getServerSideProps = () => {
+/*
+The Next.js framework also supports SSR. 
+This pre-renders a page on the server on every request. 
+It can be accomplished by exporting an async function called getServerSideProps() 
+from a page as follows.
+*/
+export const getServerSideProps = (ctx) => {
   return {
     props: {
       localTime: new Date().toLocaleTimeString(),
