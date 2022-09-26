@@ -42,7 +42,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <ChakraProvider theme={theme} resetCSS>
       <PlayerLayout>
-        <Component {...pageProps} />;
+        <Component {...pageProps} />
       </PlayerLayout>
     </ChakraProvider>
   );

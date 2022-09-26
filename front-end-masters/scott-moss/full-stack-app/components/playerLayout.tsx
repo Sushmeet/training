@@ -7,7 +7,9 @@ export const PlayerLayout = ({ children }) => {
         SideBar
       </Box>
       {/* Middle Children Content */}
-      <Box ml="250px">{children}</Box>
+      <Box ml="250px" border="solid">
+        {children}
+      </Box>
       {/* bottom player */}
       <Box position="absolute" bottom={0} left={0} border="solid">
         Bottom Player
