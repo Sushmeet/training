@@ -41,9 +41,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   const theme = extendTheme({ colors, components });
   return (
     <ChakraProvider theme={theme} resetCSS>
-      <PlayerLayout>
-        <Component {...pageProps} />
-      </PlayerLayout>
+      {/* <PlayerLayout> */}
+      <Component {...pageProps} />
+      {/* </PlayerLayout> */}
     </ChakraProvider>
   );
 };
