@@ -61,12 +61,11 @@ function App() {
             element={
               <div className="cities-container">
                 {cities.map((city) => {
-                  return <CityCard city={city} />;
+                  return <CityCard key={city.cityName} city={city} />;
                 })}
               </div>
             }
           />
-
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route
