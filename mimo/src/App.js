@@ -2,6 +2,11 @@ import "./App.css";
 
 import { Header } from "./components/Header";
 import { CityCard } from "./components/CityCard";
+import { About } from "./components/About";
+import { Contact } from "./components/Contact";
+import { CityDetails } from "./components/CityDetails";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   const user = {
@@ -48,13 +53,28 @@ function App() {
 
   return (
     <div>
-      <Header user={user} />
-      {/* <CityCard city={cities[0]} /> */}
-      <div className="cities-container">
-        {cities.map((city) => {
-          return <CityCard city={city} />;
-        })}
-      </div>
+      <BrowserRouter>
+        <Header user={user} />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <div className="cities-container">
+                {cities.map((city) => {
+                  return <CityCard city={city} />;
+                })}
+              </div>
+            }
+          />
+
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route
+            path="/citydetails/:cityName"
+            element={<CityDetails cities={cities} />}
+          />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
