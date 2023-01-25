@@ -5,6 +5,7 @@ import { CityCard } from "./components/CityCard";
 import { About } from "./components/About";
 import { Contact } from "./components/Contact";
 import { CityDetails } from "./components/CityDetails";
+import { BabyNames } from "./components/BabyNames";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -72,6 +73,7 @@ function App() {
             path="/citydetails/:cityName"
             element={<CityDetails cities={cities} />}
           />
+          <Route path="/babyNames" element={<BabyNames />} />
         </Routes>
       </BrowserRouter>
     </div>

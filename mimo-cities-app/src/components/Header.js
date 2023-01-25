@@ -7,6 +7,7 @@ export const Header = ({ user }) => {
         <a href="/"> Home</a>
         <a href="/contact"> Contact Us</a>
         <a href="/about"> About Us</a>
+        <a href="/babyNames">BabyNames</a>
       </div>
       <div className="profile-container">
         <img className="profile-image" src={user.avatarUrl} alt="profile" />
