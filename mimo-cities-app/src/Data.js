@@ -1,4 +1,4 @@
-how let data = [
+let data = [
   {
     id: 0,
     name: "Zahra",
