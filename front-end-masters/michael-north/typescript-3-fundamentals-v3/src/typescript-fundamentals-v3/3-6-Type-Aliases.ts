@@ -79,3 +79,18 @@ const maybeGetUserInfo = (): UserInfoScenario => {
 };
 
 const outcome = maybeGetUserInfo();
+
+// Inheritance in type aliases
+// u can create type aliases that combine  existing types with new behaviour by using the & operator
+
+// While there’s no true extends keyword that can be used when defining type aliases, this pattern has a very similar effect
+
+type SpeciaDate = Date & { getReason(): string };
+
+const newYearsEve: SpeciaDate = {
+  ...new Date(),
+  getReason: () => "wow what a party",
+};
+
+newYearsEve.getReason;
+newYearsEve.getDay;
