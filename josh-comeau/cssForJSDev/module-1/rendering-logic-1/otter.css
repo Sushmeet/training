@@ -1,0 +1,24 @@
+body {
+  background-color: black;
+  padding: 32px;
+}
+p,
+h1 {
+  margin: 0px;
+}
+
+.card {
+  background-color: white;
+  padding: 32px;
+  border-radius: 8px;
+}
+
+.heading {
+  background-color: deeppink;
+  padding: 16px 32px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 2rem;
+  margin-top: -48px;
+  margin-bottom: 24px;
+}
