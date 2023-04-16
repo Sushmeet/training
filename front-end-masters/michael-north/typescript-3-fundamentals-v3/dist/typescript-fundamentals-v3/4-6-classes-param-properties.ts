@@ -19,3 +19,4 @@ class Cycle2 {
 
 // let ddd = new Cycle2("cycle", "jjjj", '1998');
 let ddd = new Cycle2("cycle", "jjjj", 1998);
+""
