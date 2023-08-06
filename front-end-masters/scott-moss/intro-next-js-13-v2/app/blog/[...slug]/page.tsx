@@ -11,5 +11,8 @@ http://localhost:3000/blog/something   // cause i have [slug]
 
 http://localhost:3000/blog/something/somethingmore   // cause i have [...slug]
 
-this is 
+
+
+use cookies to protect a route. middleware has access to cookies
+
 */
