@@ -11,9 +11,14 @@ export default async function Home() {
   const result = await fetchRedditData();
   const topic = result?.data.children[0].data.title;
 
+  const user = await fetch("http://localhost:3000/api/user/userInfo");
+  const userInfo = await user.json();
+  const userName = userInfo.userName;
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <h1>{topic}</h1>
+      <h2>{userName}</h2>
       <Header />
       <HeaderLink />
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
