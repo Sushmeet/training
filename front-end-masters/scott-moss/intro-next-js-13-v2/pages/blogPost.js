@@ -6,7 +6,7 @@ const fetchRedditData = async () => {
 export const getServerSideProps = async () => {
   const result = await fetch("http://localhost:3000/api/user/userInfo");
   const user = await result.json();
-  console.log("user---", user);
+  // console.log("user---", user);
 
   const result2 = await fetchRedditData();
   const topic = result2?.data.children[0].data.title;
@@ -18,7 +18,7 @@ export const getServerSideProps = async () => {
 };
 
 export default function BlogPost({ user, topic, repo }) {
-  console.log("user2222---", user);
+  // console.log("user2222---", user);
   //   console.log("topic---", topic);
   //   console.log("repo---", repo);
 
