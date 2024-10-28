@@ -4,7 +4,7 @@ names = ['Sushi', "Robert", 'house', 'joker']
 
 # you can also add conditionals in the list comprehension 
 length_of_even_names = [len(name) for name in names if len(name) % 2 == 0]
-print(length_of_even_names)
+print(f"length_of_even_names is {length_of_even_names}")
 
 # add conditionals and return a tuple
 length_of_names_list_comphrehension_with_tuple = [ (name, len(name)) for name in names if len(name) % 2 == 0]
@@ -14,10 +14,12 @@ print(length_of_names_list_comphrehension_with_tuple)
 # split and join
 my_string = 'This is an example of how to split'
 split_string = my_string.split(' ')
-new_string = ' ,'.join(split_string)
+new_string = ', '.join(split_string)
 
 
 print(split_string)
+print(new_string)
+
 
 
 #original List is unaffected
