@@ -3,7 +3,6 @@
 #SetUp
 names = ['Sushi', "Robert", 'house', 'joker']
 
-
 length_of_names = []
 for name in names:
     length_of_names.append(len(name))
