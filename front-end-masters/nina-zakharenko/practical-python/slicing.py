@@ -19,3 +19,5 @@ my_string[7:] # from 7 to the end gives 'world!'
 # copy the whole list by leaving both the beginning and the ending out.
 my_new_string = my_string[:] # my_new_string is 'Hello, world!'
 
+#negative indexing.
+my_string[-1]
