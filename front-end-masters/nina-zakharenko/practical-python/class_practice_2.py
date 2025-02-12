@@ -2,6 +2,11 @@ class Car:
     runs = True
     carName = "toyota"
 
+    @classmethod
+    def getCarName(cls):
+        return cls.carName
+
+
     def start(self):
         if self.runs == True:
             print(f"{self.carName} is working {self.runs}")
@@ -22,5 +27,7 @@ my_audi.start()
 my_honda = Car()
 my_honda.carName = "Honda" 
 
-Car.start(my_honda)
+print(my_honda.carName)
+print(my_honda.getCarName())
+
 
