@@ -24,3 +24,9 @@ npm run start path/to/your/file.ts
 
 npx ts-node src/index.ts
 
+
+Now you can run your tests using:
+
+- `npm test` - Run tests once
+
+- `npm run test:watch` - Run tests in watch mode (rerun on file changes)
