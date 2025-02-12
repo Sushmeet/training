@@ -30,3 +30,9 @@ Now you can run your tests using:
 - `npm test` - Run tests once
 
 - `npm run test:watch` - Run tests in watch mode (rerun on file changes)
+
+Run an individual test file:
+
+npx jest palindrome.test.ts
+
+
