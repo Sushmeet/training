@@ -1,8 +1,11 @@
 //Given an integer x, return true if x is a palindrome and false otherwise.
 
 export function isPalindrome(x: number): boolean {
-  console.log(`Hello ${name}`);
-  return true;
+  const strigifiedX = x.toString();
+
+  const reversedString = strigifiedX.split("").reverse().join("");
+
+  return strigifiedX === reversedString;
 }
 
 // lets create a few tests
