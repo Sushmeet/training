@@ -10,3 +10,24 @@ def what_if(a):
 
 
 what_if(10)
+
+'''
+Below is fizz buzz
+'''
+def fizz_buzz(num):
+    result = ""
+    if(num % 15 == 0):
+        print("FizzBuzz")
+        result = "FizzBuzz"
+    elif(num % 3 == 0):
+        print("Fizz")
+        result = "Fizz"
+    elif(num % 5 == 0):
+        print("Buzz")
+        result = "Buzz"
+    else:
+        print(num)
+    return result
+
+final_value = fizz_buzz(5)
+print(f"yaeah---- {final_value}")
