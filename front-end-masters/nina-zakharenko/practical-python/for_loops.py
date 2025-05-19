@@ -2,10 +2,17 @@ student_names = ['sushi', 'tommy', 'rocky'] # lists
 for student in student_names:
         print(f'student is {student}')
 
+# tuples
 
 boy_tuples = ('sushi', 'toniii', 'jackyy') # tuples
 for boy in boy_tuples:
         print(f'boy is {boy}')
+
+
+# tuples
+nested_tuple = ((1, 2), (3,4)) 
+for nest in nested_tuple:
+    print(f"nested {nest}")
 
 
 for num in range(2, 4):
