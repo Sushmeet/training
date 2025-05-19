@@ -17,7 +17,7 @@ numbers_list.sort(reverse=True)
 ##################################################
 # function that returns a tuple , which can be then unpackaged.
 def http_status_code():
-    return 200, 'ok'
+    return (200, 'ok', 123)
 
-code, value = http_status_code()
-print('code---', code, 'value---', value)
+code, value, bale = http_status_code()
+print('code---', code, 'value---', value, 'bale---', bale)
