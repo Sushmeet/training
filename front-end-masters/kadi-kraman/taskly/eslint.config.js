@@ -8,9 +8,11 @@ module.exports = defineConfig([
     files: ['**/*.js', '**/*.ts', '**/*.tsx'],
     plugins: {
       prettier: require('eslint-plugin-prettier'),
+      'react-native': require('eslint-plugin-react-native'),
     },
     rules: {
       'prettier/prettier': ['error'],
+      'react-native/no-unused-styles': 'error',
     },
   },
   {
