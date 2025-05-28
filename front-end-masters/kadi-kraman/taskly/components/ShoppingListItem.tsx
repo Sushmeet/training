@@ -3,9 +3,13 @@ import { theme } from '../theme';
 
 type ShoppingListItemProps = {
   name: string;
+  isCompleted?: boolean;
 };
 
-export default function ShoppingListItem({ name }: ShoppingListItemProps) {
+export default function ShoppingListItem({
+  name,
+  isCompleted,
+}: ShoppingListItemProps) {
   const handleDelete = () => {
     Alert.alert(
       'Are you sure you want to delete this',
@@ -33,10 +37,36 @@ export default function ShoppingListItem({ name }: ShoppingListItemProps) {
   };
 
   return (
-    <View style={styles.itemContainer}>
-      <Text style={styles.itemText}>{name}</Text>
-      <TouchableOpacity onPress={handleDelete} style={styles.button}>
-        <Text style={styles.buttonText}>Delete</Text>
+    <View
+      style={[
+        styles.itemContainer,
+        isCompleted ? styles.completedContainer : undefined,
+      ]}
+    >
+      <Text
+        style={[
+          styles.itemText,
+          isCompleted ? styles.completedText : undefined,
+        ]}
+      >
+        {name}
+      </Text>
+      <TouchableOpacity
+        onPress={handleDelete}
+        activeOpacity={0.8}
+        style={[
+          styles.button,
+          isCompleted ? styles.completedButton : undefined,
+        ]}
+      >
+        <Text
+          style={[
+            styles.buttonText,
+            isCompleted ? styles.buttonTextCompleted : undefined,
+          ]}
+        >
+          Delete
+        </Text>
       </TouchableOpacity>
       {/* <StatusBar style="auto" /> */}
     </View>
@@ -53,19 +83,34 @@ const styles = StyleSheet.create({
     borderBottomColor: theme.colorSerulian,
     borderBottomWidth: 1,
   },
+  completedContainer: {
+    backgroundColor: theme.colorLightGrey,
+    borderBottomColor: theme.colorLightGrey,
+  },
   itemText: {
     fontWeight: 'bold',
     fontSize: 14,
+  },
+  completedText: {
+    textDecorationLine: 'line-through',
+    color: theme.colorGrey,
+    textDecorationColor: theme.colorGrey,
   },
   button: {
     padding: 8,
     backgroundColor: theme.colorBlack,
     borderRadius: 6,
   },
+  completedButton: {
+    backgroundColor: theme.colorGrey,
+  },
   buttonText: {
     color: theme.colorWhite,
     fontWeight: 'bold',
     textTransform: 'uppercase',
     letterSpacing: 1,
+  },
+  buttonTextCompleted: {
+    backgroundColor: theme.colorGrey,
   },
 });
