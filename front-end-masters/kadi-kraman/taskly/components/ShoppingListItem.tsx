@@ -1,5 +1,6 @@
 import { Alert, TouchableOpacity, View, Text, StyleSheet } from 'react-native';
 import { theme } from '../theme';
+import Entypo from '@expo/vector-icons/Entypo';
 
 type ShoppingListItemProps = {
   name: string;
@@ -59,14 +60,19 @@ export default function ShoppingListItem({
           isCompleted ? styles.completedButton : undefined,
         ]}
       >
-        <Text
+        {/* <Text
           style={[
             styles.buttonText,
             isCompleted ? styles.buttonTextCompleted : undefined,
           ]}
         >
           Delete
-        </Text>
+        </Text> */}
+        <Entypo
+          name="circle-with-cross"
+          size={24}
+          color={isCompleted ? theme.colorGrey : theme.colorRed}
+        />
       </TouchableOpacity>
       {/* <StatusBar style="auto" /> */}
     </View>
