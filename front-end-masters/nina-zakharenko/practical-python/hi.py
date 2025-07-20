@@ -6,7 +6,7 @@ numbers_list = [1, 5, 2, 3, 10, 7]
 print(numbers_list)
 
 
-b = (1, 2, 'help')
+b = (1, 2, 'help') # tuple....
 print('a----', b, 'count: ', b.count)
 
 

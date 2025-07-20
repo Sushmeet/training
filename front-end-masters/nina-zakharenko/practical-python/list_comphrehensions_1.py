@@ -1,5 +1,5 @@
 
-# simple python methon to go go over a list, and perform some operations and store the list in an empty list
+# simple python method to go go over a list, and perform some operations and store the list in an empty list
 #SetUp
 names = ['Sushi', "Robert", 'house', 'joker']
 
