@@ -11,8 +11,8 @@
   },
   "scripts": {
     "build": "tsc",
-    "dev": "tsx index.ts",
-    "start": "node dist/index.js"
+    "dev": "tsx generateText.ts",
+    "start": "node dist/generateText.js"
   },
   "dependencies": {
     "@ai-sdk/google": "^3.0.1",
