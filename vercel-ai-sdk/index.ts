@@ -1,11 +1,18 @@
+import 'dotenv/config';
 import { google } from "@ai-sdk/google";
-import { streamText } from "ai";
+import { generateText } from "ai";
 
-// Basic runtime checks — doesn't call the API.
-// Note: tsx automatically loads .env files, so no explicit dotenv import needed.
-console.log("Node:", process.version);
-console.log("Google provider available:", typeof google);
-console.log("AI SDK `streamText` is", typeof streamText);
+const model = google("gemini-2.0-flash-lite");
+
+
+const prompt = "What is the capital of Canada";
+
+const result = await generateText({
+  model,
+  prompt,
+});
+
+console.log(result.text);
 
 /*
 Example usage (uncomment and set GOOGLE_API_KEY in .env to run):
