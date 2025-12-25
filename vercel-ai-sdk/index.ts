@@ -1,11 +1,10 @@
-import 'dotenv/config';
+import "dotenv/config";
 import { google } from "@ai-sdk/google";
 import { generateText } from "ai";
 
 const model = google("gemini-2.0-flash-lite");
 
-
-const prompt = "What is the capital of Canada";
+const prompt = "What is the capital of Italy";
 
 const result = await generateText({
   model,
